@@ -1,0 +1,33 @@
+%http://www.tug.org/texlive/doc/texlive-pl/tex-livep.sty
+\usepackage{fancyvrb}
+\PassOptionsToPackage{obeyspaces}{url}
+\usepackage{url}
+\DeclareUrlCommand\folder{\urlstyle{same}}
+
+\DefineVerbatimEnvironment{console}{Verbatim}{fontsize=\small,fontseries=b }
+\DefineVerbatimEnvironment{consolesmall}{Verbatim}{fontsize=\footnotesize,fontseries=b }
+\DefineVerbatimEnvironment{file}{Verbatim}{fontsize=\scriptsize,frame=single }
+\DefineVerbatimEnvironment{filesmall}{Verbatim}{fontsize=\tiny,frame=single }
+\DefineVerbatimEnvironment{screensmall}{Verbatim}{fontsize=\scriptsize}
+\DefineVerbatimEnvironment{screen}{Verbatim}{fontsize=\normalsize}
+
+\newcommand{\filename}[1]{ \vspace*{2mm} \textbf{\textsf{#1}}}
+\newcommand{\urlsmall}[1]{ \small \url{#1} \normalsize}
+\newcommand{\urlsmaller}[1]{ \footnotesize \url{#1} \normalsize}
+\newcommand{\urlsmallest}[1]{ \scriptsize \url{#1} \normalsize}
+\newcommand{\urltiny}[1]{ \tiny \url{#1} \normalsize}
+
+% dummys - don't work with htlatex 
+\newcommand{\lhead}[1]{ }
+\newcommand{\chead}[1]{ }
+\newcommand{\rhead}[1]{ }
+\newcommand{\titleref}[1]{ }
+
+% Keine Einrückungen:
+\parindent 0pt
+
+%Source automatisch umbrechen
+\lstset{
+    frame=single,
+	basicstyle=\ttfamily \scriptsize,
+}

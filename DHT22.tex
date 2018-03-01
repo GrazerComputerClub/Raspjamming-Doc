@@ -1,0 +1,30 @@
+
+%\textbf{Anschluss:} 
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=1.0, angle=-90]{images/DHT22_Steckplatine.png}	
+  %	\caption{}
+  \label{DHT22_Steckplatine}
+\end{figure}
+
+%\textbf{Schaltplan:} 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.25]{images/DHT22_Schaltplan.png}	
+	%	\caption{}
+	\label{DHT22_Steckplatine}
+\end{figure}
+
+
+%\textbf{Programm:} 
+
+\begin{console}
+cd ~
+git clone https://github.com/technion/lol_dht22
+cd lol_dht22
+./configure
+make
+sudo ./loldht 7
+\end{console}

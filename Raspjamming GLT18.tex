@@ -1,0 +1,41 @@
+\documentclass[10pt,pdftex,a4paper,twoside,openright]{book}
+
+\usepackage[hmarginratio=3:2]{geometry}
+
+%German setting
+\usepackage{ngerman}
+\usepackage[latin1]{inputenc}
+\usepackage[official]{eurosym}
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}  % Include grafics
+\usepackage{grffile}   % support special grafic names
+\usepackage{listings}  % Source code
+
+\usepackage{listings}
+\usepackage{pdf}
+\usepackage{titleref}  % Referenz with name
+\usepackage{wrapfig}
+
+
+\pagestyle{fancy}
+% Links nur Kapitel (Groﬂkeinschreibung statt alles Groﬂ)
+\fancyhead[L]{\nouppercase{\leftmark}}
+% Rechts nichts
+\fancyhead[R]{}
+
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{2} 
+
+\input{version}
+
+\title{Raspberry Pi Jam - Raspjamming GLT}
+\author{\textbf{Autor:}\\ Martin Strohmayer\\ebook@strohmayers.com\\ \url{http://strohmayers.com}}
+\date{Version \versionnumber \\\today \\PDF Edition}
+
+\begin{document}
+
+\input{inhalt}
+
+\end{document}
+%EOF

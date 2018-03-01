@@ -1,0 +1,88 @@
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.25, angle=-90]{images/LED_Steckplatine.png}	
+  %	\caption{}
+  \label{LED_Steckplatine}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.25]{images/LED_Schaltplan.png}	
+	%	\caption{}
+	\label{LED_Schaltplan}
+\end{figure}
+
+\subsection{Shell}
+
+\begin{console}
+	gpio -g mode 17 out
+	gpio -g write 17 1
+	gpio -g write 17 0
+	gpio -g mode 17 in
+\end{console}
+
+%https://de.scribd.com/doc/101830961/GPIO-Pads-Control2
+
+% gpio drive 0 0  2 mA
+% gpio drive 0 3  8 mA <- default
+% gpio drive 0 7  16 mA
+
+
+\subsection{Python}
+
+\subsection{C\#}
+
+\subsection{C}
+
+\begin{console}
+	geany &
+\end{console}
+
+Nun kann man ein neues Projekt erstellen, dazu wählt man \texttt{Projekt} $\rightarrow$ \texttt{Neu...}. Dann Gibt man den Namen des Projekts an. Das Anlegen der Verzeichnisse muss man auch noch bestätigen. 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.48]{images/Geany_Projekt.png}
+	\includegraphics[scale=0.42]{images/Geany_Projekt2.png}
+%	\caption{}
+	\label{Geany-create}
+\end{figure}
+
+Danach wählt man \texttt{Datei} $\rightarrow$ \texttt{Speichern unter} um die unbenannte Datei mit dem Namen "`Blink.c"' speichern zu können. Nun kann man den folgenden C-Soure eingeben.
+
+\lstset{language=C, caption=, label=LEDProgram, frame=single, basicstyle=\ttfamily
+	\footnotesize, breakatwhitespace=false, showstringspaces=false, showtabs=false, tabsize=2 }
+\lstinputlisting{source/Blink.c}
+
+Jetzt darf man nicht vergessen im Menü unter \texttt{Erstellen} $\rightarrow$ \texttt{Kommandos zum Erstellen konfigurieren} die Wiring Pi Library mit "`-lwiringPi"' bei Compile und Build zu ergänzen.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.48]{images/Geany_Create_Wiringpi.png}
+	%	\caption{}
+	\label{Geany-create}
+\end{figure}
+
+Nun kann man das Projekt mit den Ziegel-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Erstellen.png} erstellen bzw. kompilieren und danach mit dem Zahnrad-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Ausfuehren.png}  ausführen.  
+
+
+%\lstset{language=C, caption='LED.c' C Source Code, label=LEDProgram, frame=single, basicstyle=\ttfamily
+%	\footnotesize, breakatwhitespace=false, showstringspaces=false, showtabs=false, tabsize=2 }
+%\lstinputlisting{LED.c}
+
+%Download: \urlsmall{https://github.com/mstroh76/RaspberryPiProjekte/raw/master/Elektronik/LED.c}
+
+%
+%\begin{console}
+%   wget https://github.com/mstroh76/RaspberryPiProjekte/raw/master/Elektronik/test_output.c
+%	gcc -Wall -o LED LED.c -lwiringPi
+%	./LED
+%\end{console}
+%
+%\begin{screensmall}
+%	Raspberry Pi wiringPi LED program using GPIO17 (press ctrl+c to quit)
+%	LED blinking...
+%	on off on off on off on off on off on off on off on^C off
+%	LED off
+%\end{screensmall}

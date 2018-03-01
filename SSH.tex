@@ -1,0 +1,55 @@
+
+Nach der Einrichtung kann per SSH-Client eine Verbindungen zum Raspberry Pi hergestellt werden. Dazu muss in einem Terminal folgender Befehl eingegeben werden:
+
+\begin{console} 
+	ssh -X pi@raspberrypi.local
+\end{console}
+
+Um grafische Programme am Host Anzeigen zu können muss der Parameter \texttt{-X} angegeben werden. Dann wird eine X-Server Verbindung via SSH hergestellt.
+Verbindet man sich zum ersten Mal mit dem Raspberry Pi, so wird noch eine Sicherheitswarnung ausgegeben. Der kryptographische Schlüssel für die Verbindung ist dem System noch nicht bekannt.%  und muss bestätigt werden.
+\begin{screensmall}
+The authenticity of host 'raspberrypi.local (169.254.229.192)' can't be established.
+ECDSA key fingerprint is SHA256:Dcf3HYgE2GHnNnZ8Xhv8iJ9yA+zvfXBC9COm2eL9i0w.
+Are you sure you want to continue connecting (yes/no)? 
+Warning: Permanently added 'raspberrypi.local,169.254.229.192' (ECDSA) to the list of known hosts.
+\end{screensmall}
+
+Die Frage muss mit \texttt{yes} bestätigt werden. Anschließend muss das Default-Passwort von Raspbian \textbf{\texttt{raspberry}} eingegeben werden. Nun sollte man den Raspberry Pi Prompt \texttt{pi@rasbperrypi:\textasciitilde  \$} sehen. 
+
+Wechselt man zu einem anderen Raspberry Pi mit den gleichen Namen, so kann es passieren, dass eine Fehlermeldung ausgegeben wird weil sich der kryptographische Schlüssel geändert hat.
+
+\begin{screensmall} 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+\end{screensmall} 
+
+%The ECDSA host key for raspberrypi.local has changed,
+%and the key for the corresponding IP address 169.254.229.192
+%is unknown. This could either mean that
+%DNS SPOOFING is happening or the IP address for the host
+%and its host key have changed at the same time.
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+%@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+%IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+%Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+%It is also possible that a host key has just been changed.
+%The fingerprint for the ECDSA key sent by the remote host is
+%SHA256:Dcf2HYyE2GHnNpZ8Xhv8iJ9yj+zvfXBC9COm2eL9i0w.
+%Please contact your system administrator.
+%Add correct host key in /home/evil/.ssh/known_hosts to get rid of this message.
+%Offending ECDSA key in /home/evil/.ssh/known_hosts:9
+%remove with:
+%ssh-keygen -f "/home/evil/.ssh/known_hosts" -R raspberrypi.local
+%ECDSA host key for raspberrypi.local has changed and you have requested strict checking.
+
+
+In diesem Fall muss man die Verbindung aus dem bekannten Hosts löschen. Hierfür muss folgendes Kommando ausgeführt werden:
+
+\begin{console} 
+	ssh-keygen -R raspberrypi.local
+\end{console}
+
+Optional kann auch der Parameter \texttt{-o UserKnownHostsFile=/dev/null} beim ssh Befehl hinzugefügt werden. Dann erfolgt kein Überprüfung der Verbindung. 
+
