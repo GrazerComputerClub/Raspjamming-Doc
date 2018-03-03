@@ -29,7 +29,6 @@
 % gpio drive 0 7  16 mA
 
 
-\subsection{Python}
 
 \subsection{C\#}
 
@@ -86,3 +85,31 @@ Nun kann man das Projekt mit den Ziegel-Icon \includegraphics[scale=0.4]{images/
 %	on off on off on off on off on off on off on off on^C off
 %	LED off
 %\end{screensmall}
+
+\subsection{Python}
+Um das Python Programm auszuführen muss man wie oben ein Projekt anlegen und
+dann unter \texttt{Datei} $\rightarrow$ \texttt{Speichern unter} die
+Datei mit dem Namen "`Blink.py"' abspeichern. Nun kann man
+den folgenden Python-Source eingeben.
+
+\lstset{language=Python, caption=, 
+        label=LEDProgram, frame=single, basicstyle=\ttfamily
+	      \footnotesize, breakatwhitespace=false, showstringspaces=false, 
+        showtabs=false, tabsize=2 }
+\lstinputlisting{source/Blink.py}
+
+Um das Programm auszuführen muss im Menü unter \texttt{Erstellen}
+$\rightarrow$ \texttt{Kommandos zum Erstellen konfigurieren} der Python 
+Interpreter von Version 2 auf Version 3 umgestellt werden. Hierfür einfach im
+Textfeld 'Compile' und im Textfeld 'Execute' \texttt{python} durch \texttt{python3}
+ersetzen.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.48]{images/Geany_SetPy3.png}
+	%	\caption{}
+	\label{Geany-setpy3}
+\end{figure}
+
+Anschließend kann man das Programm mit dem Zahnrad-Icon
+\includegraphics[scale=0.4]{images/Geany_Icon_Ausfuehren.png}  ausführen.  
