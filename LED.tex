@@ -103,3 +103,11 @@ schreiben\ldots
 	      \footnotesize, breakatwhitespace=false, showstringspaces=false, 
         showtabs=false, tabsize=2 }
 \lstinputlisting{source/Blink.asm}
+
+Um das Programm zu kompilieren und auszuführen müssen folgende Befehle in die Kommandozeile eingegeben werden:
+\begin{console}
+as -o Blink.o Blink.asm 
+gcc -o Blink Blink.o -lwiringPi
+./Blink 
+\end{console}
+
