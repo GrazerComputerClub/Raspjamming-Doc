@@ -38,7 +38,7 @@
 	geany &
 \end{console}
 
-Nun kann man ein neues Projekt erstellen, dazu wählt man \texttt{Projekt} $\rightarrow$ \texttt{Neu...}. Dann Gibt man den Namen des Projekts an. Das Anlegen der Verzeichnisse muss man auch noch bestätigen. 
+Nun kann man ein neues Projekt erstellen, dazu wählt man \texttt{Projekt} $\rightarrow$ \texttt{Neu...}. Dann Gibt man den Namen des Projekts an, z.~B. PyBlink. Das Anlegen der Verzeichnisse muss man auch noch bestätigen. 
 
 \begin{figure}[ht]
 	\centering
@@ -54,7 +54,7 @@ Danach wählt man \texttt{Datei} $\rightarrow$ \texttt{Speichern unter} um die un
 	\footnotesize, breakatwhitespace=false, showstringspaces=false, showtabs=false, tabsize=2 }
 \lstinputlisting{source/Blink.c}
 
-Jetzt darf man nicht vergessen im Menü unter \texttt{Erstellen} $\rightarrow$ \texttt{Kommandos zum Erstellen konfigurieren} die Wiring Pi Library mit "`-lwiringPi"' bei Compile und Build zu ergänzen.
+Jetzt darf man nicht vergessen im Menü unter \texttt{Erstellen} $\rightarrow$ \texttt{Kommandos zum Erstellen konfigurieren} die Wiring Pi Library mit "`-lwiringPi"' bei 'Compile' und 'Build' zu ergänzen.
 
 \begin{figure}[ht]
 	\centering
@@ -63,34 +63,15 @@ Jetzt darf man nicht vergessen im Menü unter \texttt{Erstellen} $\rightarrow$ \t
 	\label{Geany-create}
 \end{figure}
 
-Nun kann man das Projekt mit den Ziegel-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Erstellen.png} erstellen bzw. kompilieren und danach mit dem Zahnrad-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Ausfuehren.png}  ausführen.  
-
-
-%\lstset{language=C, caption='LED.c' C Source Code, label=LEDProgram, frame=single, basicstyle=\ttfamily
-%	\footnotesize, breakatwhitespace=false, showstringspaces=false, showtabs=false, tabsize=2 }
-%\lstinputlisting{LED.c}
-
-%Download: \urlsmall{https://github.com/mstroh76/RaspberryPiProjekte/raw/master/Elektronik/LED.c}
-
-%
-%\begin{console}
-%   wget https://github.com/mstroh76/RaspberryPiProjekte/raw/master/Elektronik/test_output.c
-%	gcc -Wall -o LED LED.c -lwiringPi
-%	./LED
-%\end{console}
-%
-%\begin{screensmall}
-%	Raspberry Pi wiringPi LED program using GPIO17 (press ctrl+c to quit)
-%	LED blinking...
-%	on off on off on off on off on off on off on off on^C off
-%	LED off
-%\end{screensmall}
+Nun kann man das Projekt mit den Ziegel-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Erstellen.png} erstellen bzw. kompilieren und danach mit dem Zahnrad-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Ausfuehren.png} ausführen. Beendet wird das Programm mit der Tastenkombination \framebox{Strg}+\framebox{C}. 
 
 \subsection{Python}
-Um das Python Programm auszuführen muss man wie oben ein Projekt anlegen und
-dann unter \texttt{Datei} $\rightarrow$ \texttt{Speichern unter} die
-Datei mit dem Namen "`Blink.py"' abspeichern. Nun kann man
-den folgenden Python-Source eingeben.
+
+\begin{console}
+	geany &
+\end{console}
+
+Nun kann man ein neues Projekt erstellen, dazu wählt man \texttt{Projekt} $\rightarrow$ \texttt{Neu...}. Dann gibt man den Namen des Projekts an, z.~B. PyBlink. Das Anlegen der Verzeichnisse muss man auch noch bestätigen. Danach unter \texttt{Datei} $\rightarrow$ \texttt{Speichern unter} die unbenannte Datei mit dem Namen "`Blink.py"' speichern. Nun kann man den folgenden Python-Source eingeben.
 
 \lstset{language=Python, caption=, 
         label=LEDProgram, frame=single, basicstyle=\ttfamily
@@ -98,7 +79,7 @@ den folgenden Python-Source eingeben.
         showtabs=false, tabsize=2 }
 \lstinputlisting{source/Blink.py}
 
-Um das Programm auszuführen muss im Menü unter \texttt{Erstellen}
+Um das Programm auszuführen zu können, muss im Menü unter \texttt{Erstellen}
 $\rightarrow$ \texttt{Kommandos zum Erstellen konfigurieren} der Python 
 Interpreter von Version 2 auf Version 3 umgestellt werden. Hierfür einfach im
 Textfeld 'Compile' und im Textfeld 'Execute' \texttt{python} durch \texttt{python3}
@@ -111,8 +92,7 @@ ersetzen.
 	\label{Geany-setpy3}
 \end{figure}
 
-Anschließend kann man das Programm mit dem Zahnrad-Icon
-\includegraphics[scale=0.4]{images/Geany_Icon_Ausfuehren.png}  ausführen.  
+Anschließend kann man das Programm mit dem Zahnrad-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Ausfuehren.png} ausführen. Achtung, nach dem Start braucht die Initialisierung der GPIOZero Library ein paar Sekunden bevor das Programm startet. Beendet wird das Programm mit der Tastenkombination \framebox{Strg}+\framebox{C}.
 
 \subsection{Assembler}
 Echte Hardcore-Programmierer können natürlich auch das LED-Beispiel in Assembler 
@@ -123,4 +103,3 @@ schreiben\ldots
 	      \footnotesize, breakatwhitespace=false, showstringspaces=false, 
         showtabs=false, tabsize=2 }
 \lstinputlisting{source/Blink.asm}
-
