@@ -1,0 +1,5 @@
+install:
+    - sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-lang-german
+
+script:
+    - make

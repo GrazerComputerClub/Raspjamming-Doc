@@ -93,3 +93,21 @@ ersetzen.
 \end{figure}
 
 Anschließend kann man das Programm mit dem Zahnrad-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Ausfuehren.png} ausführen. Achtung, nach dem Start braucht die Initialisierung der GPIOZero Library ein paar Sekunden bevor das Programm startet. Beendet wird das Programm mit der Tastenkombination \framebox{Strg}+\framebox{C}.
+
+\subsection{Assembler}
+Echte Hardcore-Programmierer können natürlich auch das LED-Beispiel in Assembler 
+schreiben\ldots
+
+\lstset{language=[x86masm]Assembler, caption=, 
+        label=LEDProgram, frame=single, basicstyle=\ttfamily
+	      \footnotesize, breakatwhitespace=false, showstringspaces=false, 
+        showtabs=false, tabsize=2 }
+\lstinputlisting{source/Blink.asm}
+
+Um das Programm zu kompilieren und auszuführen müssen folgende Befehle in die Kommandozeile eingegeben werden:
+\begin{console}
+as -o Blink.o Blink.asm 
+gcc -o Blink Blink.o -lwiringPi
+./Blink 
+\end{console}
+
