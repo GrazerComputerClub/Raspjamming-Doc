@@ -1,2 +1,0 @@
-# Raspjamming
-Anleitung für Raspjamming
