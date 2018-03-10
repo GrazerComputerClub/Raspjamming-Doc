@@ -1,9 +1,9 @@
 
-Raspjamming Homepage
+# Raspjamming Homepage
 
 ## Preview
 
-[![Creative Preview](https://mstroh76.github.io/Raspjamming/img/preview.jpg)](https://mstroh76.github.io/Raspjamming/)
+[![Raspjamming Homepage Preview JPG](https://mstroh76.github.io/Raspjamming/img/preview.jpg)](https://mstroh76.github.io/Raspjamming/)
 
 
 ## Copyright and License
