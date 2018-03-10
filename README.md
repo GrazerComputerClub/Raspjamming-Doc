@@ -3,7 +3,7 @@ Raspjamming Homepage
 
 ## Preview
 
-[![Creative Preview](https://mstroh76.github.io/Raspjamming/img/preview.png)](https://mstroh76.github.io/Raspjamming/)
+[![Creative Preview](https://mstroh76.github.io/Raspjamming/img/preview.jpg)](https://mstroh76.github.io/Raspjamming/)
 
 
 ## Copyright and License
