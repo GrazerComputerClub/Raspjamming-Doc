@@ -15,18 +15,18 @@ Soll Geany in Englisch ausgeführt werden obwohl das System auf Deutsch gestellt 
 LANG=C geany &
 \end{console}
 
-Nun kann eine C-Datei geladen oder erstellt werden. Dann kann das Konfigurationsfenster geöffnet werden, indem man im Menü unter \texttt{Erstellen} $\rightarrow$ \texttt{Kommandos zum Erstellen konfigurieren} auswählt.\\
-Nun muss bei \texttt{Kompilieren} und \texttt{Erstellen} die Bibliothek WiringPi mit dem Parameter "`-lwiringPi"' hinzugefügt werden. %Bei \texttt{Ausführen} muss am Beginn "`sudo"' hinzugefügt werden.
-Danach kann das Programm mit der Taste \texttt{Erstellen} auf der Raspberry Pi erzeugt werden und mit der Taste \texttt{Ausführen} auch gestartet werden.\\
+Nun kann eine Source-Datei geladen oder erstellt werden. Dann kann das Konfigurationsfenster geöffnet werden, indem man im Menü unter \texttt{Erstellen} $\rightarrow$ \texttt{Kommandos zum Erstellen konfigurieren} auswählt.\\
+Die Parameter für \texttt{Kompilieren} und \texttt{Erstellen} werden zwar bereits anhand der Source-Datei (Extention) vorbelegt. Zumeist müssen aber noch Anpassungen vorgenommen werden, um Bibliotheken oder geänderte Kompiler verwenden zu können. Was genau hier einzutragen ist, wird in den folgenden Beispielprogrammen der einzelnen Programmiersprachen angegeben.\\  
+Danach kann das Programm mit der Taste \texttt{Erstellen} erzeugt werden und mit der Taste \texttt{Ausführen} auch in einem Terminal gestartet werden.\\
 Die Tastenkürzel für alle Funktionen können über das Menü \texttt{Bearbeiten} $\rightarrow$ \texttt{Einstellungen} $\rightarrow$ \texttt{Tastenkürzel} vorgegeben werden. Dazu wählt man die gewünschte Aktion aus und drückt die Taste "`Ändern"'. Danach kann man die Taste bzw. Tastenkombination drücken, die dann umgehend im Dialog angezeigt wird. Wenn nun die OK-Taste gedrückt wird, wird die Änderung übernommen und das Tastenkürzel führt in Zukunft die Aktion aus. 
 Im Beispiel wurde der Aktion "`Erstellen"' dem Tastenkürzel bzw. der Taste \framebox{F7} zugewiesen. 
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[scale=0.48]{images/Geany_Create.png}
-  \caption{Kommandos zum Erstellen konfigurieren}
-  \label{Geany-create}
-\end{figure}
+%\begin{figure}[ht]
+%  \centering
+%  \includegraphics[scale=0.48]{images/Geany_Create.png}
+%  \caption{Kommandos zum Erstellen konfigurieren für C Projekt}
+%  \label{Geany-create}
+%\end{figure}
 
 \begin{figure}[ht]
   \centering
