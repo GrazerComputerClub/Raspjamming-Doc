@@ -1,0 +1,45 @@
+\maketitle
+
+\tableofcontents
+
+\chapter{Installation Raspberry Pi}
+
+\section{Raspbian}
+
+\input{RaspbianInstall}
+
+\input{OTG-admin}
+
+\section{SSH Verbindung (Linux)} 
+\input{SSH}
+
+\section{Einstellungen}
+
+\input{Settings}
+
+\section{Aktualisierungen und Programme}
+
+\input{install}
+
+~\\
+Folgende Shell-Scripte können später Anfängern den Verbindungsaufbau und die Erstellung des ersten beispielprogramms erleichern. 
+
+\begin{console} 
+	cd ~
+	mkdir scripts
+	cd scripts
+	wget --trust-server-names https://goo.gl/uwguQo 
+	wget --trust-server-names https://goo.gl/rJwTLm
+	chmod +x *.sh
+\end{console}
+
+
+\chapter*{Anhang}
+
+
+\input{CC_Lizenz}
+
+
+\subsection*{Haftungsausschluss}
+
+\input{Haftungsausschluss}

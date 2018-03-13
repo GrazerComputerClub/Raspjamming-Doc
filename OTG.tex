@@ -1,11 +1,5 @@
 
-%\input{OTG1}
-
-%\input{SSH}
-
-%\input{OTG2}
-
-Für den USB Gadget Modus der Raspbbery Pi Zero wird bereits eine vorkonfiguriertes MicroSD-Karte bzw. ein MicroSD-Karten-Image zur Verfügung gestellt. Darauf sind bereits alle Voreinstellungen getroffen worden sodass nur eine minimale Anpassung erfolgen muss. Sollte die Einrichtung manuell erfolgen so muss man sich das Dokument 'Raspberry Pi Jam - Raspjamming GLT Installation/Vorbereitung' besorgen.
+Für den USB Gadget Modus der Raspberry Pi Zero wird bereits eine vorkonfigurierte MicroSD-Karte bzw. ein MicroSD-Karten-Image zur Verfügung gestellt. Darauf sind bereits alle Voreinstellungen getroffen worden sodass nur eine minimale Anpassung erfolgen muss. Sollte die Einrichtung manuell erfolgen so muss man sich das PDF-Dokument 'Raspberry Pi Jam - Raspjamming Admin' besorgen. 
 
 \subsection{Host (DHCP-Client)}
 %\clearpage
@@ -13,6 +7,27 @@ Für den USB Gadget Modus der Raspbbery Pi Zero wird bereits eine vorkonfiguriert
 %\clearpage
 %\input{OTG_Mint}
 
-\subsection{SSH Verbindung}
+\input{OTG_Internet}
+
+Alternativ können die Einstellungen auch automatisch über eine Shell-Script durchgeführt werden (siehe Kapitel \ref{sec:shellscript} \titleref{sec:shellscript}).
+
+
+\section{Verbindung}
+
+\subsection{SSH}
 \input{SSH}
+
+\subsection{SSH über Shell-Script} \label{sec:shellscript}
+
+Das Einfachste ist die Verbindung zu Raspberry Pi über das vorbereitete PiConnect.sh Shell-Script herzustellen. Es setzt automatisch die Internetweiterleitung und startet die SSH-Verbindung. Es kann vom vorbereitetet Raspbian Image oder von Github geladen werden.
+
+\begin{console} 
+	scp pi@raspberrypi.local:/home/pi/scripts/PiConnect.sh .
+\end{console}
+oder
+\begin{console} 
+	wget --trust-server-names https://goo.gl/uwguQo
+	sh PiConnect.sh
+\end{console}   
+
 
