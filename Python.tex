@@ -57,10 +57,14 @@ GPIO26 (37) (38) GPIO20
 For further information, please refer to https://pinout.xyz/
 \end{screensmall}
 
-Die Bezeichnung der Pins ist sehr wichtig, da es zwei unterschiedliche Arten 
-gibt die Pins anzusprechen. Die GPIOZero Bibliothek verwendet ausschlieﬂlich
-die Broadcom Nummerierung (BCM numbering) und dies kann auch nicht auf die
-physikalische Nummerierung (BOARD numbering) umgestellt werden. Das Heiﬂt will
+Die Bezeichnung der Pins ist sehr wichtig, da es unterschiedlichste Arten 
+gibt die Pins anzusprechen. Die GPIOZero Bibliothek verwendet per Default
+die Broadcom Nummerierung (BCM numbering). Das Heiﬂt will
 man den physikalisch dritten Pin (direkt unter den 3.3V) schalten, muss man
 wissen dass dieser die Bezeichnung GPIO2 besitzt und demzufolge die Pin-Nummer 2
 verwendet werden muss.
+
+Technisch kann das Pin-Schema durch das austauschen der Pin-Factories der GPIOZero 
+Bibliothek erreicht werden (\emph{gpiozero.Device.pin\_factory}). Hier wird aber 
+nicht n‰her auf diese Mˆglichkeiten eingegangen.
+
