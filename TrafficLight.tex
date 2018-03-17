@@ -31,6 +31,24 @@
 
 \subsection{C\#}
 
+\begin{console}
+	geany &
+\end{console}
+
+Nun kann man ein neues Projekt erstellen. Dazu wählt man \texttt{Projekt} $\rightarrow$ \texttt{Neu...}. Dann gibt man den Namen des Projekts an, z.~B. Raspjamming. Das Anlegen der Verzeichnisse muss danach auch noch bestätigt werden. Nachfolgend unter \texttt{Datei} $\rightarrow$ \texttt{Speichern unter} die unbenannte Datei mit dem Namen "`TrafficLight.cs"' speichern. Nun kann man den folgenden C\#-Source eingeben.\\
+
+\lstset{language=C, caption=, label=TrafficLightProgramCS, frame=single, basicstyle=\ttfamily
+	\footnotesize, breakatwhitespace=false, showstringspaces=false, showtabs=false, tabsize=2 }
+\lstinputlisting{source/TrafficLight.cs}
+
+Um das Programm kompilieren zu können, muss im Menü unter \texttt{Erstellen}
+$\rightarrow$ \texttt{Kommandos zum Erstellen konfigurieren} der Pfad zur Sourcedatei des C\# WiringPi 
+Wrapper (siehe \ref{WiringPiCS}) hinzugefügt werden. Hierfür im Textfeld 'Kompilieren' den Pfad z.~B. WiringPi.cs ergänzen.\\
+\texttt{mcs /t:winexe \textquotedblleft\%f\textquotedblright} \textbf{WiringPi.cs} \texttt{/r:System,System.Drawing}\\
+
+Anschließend kann man das Programm mit dem Ziegel-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Erstellen.png} erstellen bzw. kompilieren und mit dem Zahnrad-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Ausfuehren.png} ausführen.
+Das Programm kann mit der Tastenkombination \framebox{Strg}+\framebox{C} vorzeitig beendet werden.
+
 \subsection{C}
 
 \begin{console}

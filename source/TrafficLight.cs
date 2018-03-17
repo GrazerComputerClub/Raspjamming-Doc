@@ -54,7 +54,7 @@ namespace Raspjamming
 				WaitMS(1000);
 				SetRYG(WiringPi.Low, WiringPi.Low, WiringPi.High);
 				WaitMS(4000);
-				for (int nBlinkCount = 0; nBlinkCount < 3; nBlinkCount++)
+				for (int blinkCount = 0; blinkCount < 3; blinkCount++)
 				{
 					if (_end)
 					{
