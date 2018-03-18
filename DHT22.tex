@@ -18,13 +18,22 @@
 \end{figure}
 
 
-%\textbf{Programm:} 
+\textbf{C:}
 
 \begin{console}
-cd ~
 git clone https://github.com/technion/lol_dht22
 cd lol_dht22
 ./configure
 make
 sudo ./loldht 7
+\end{console}
+
+\textbf{Python:}
+
+\begin{console}
+git clone https://github.com/adafruit/Adafruit_Python_DHT.git
+cd Adafruit_Python_DHT
+sudo python setup.py install
+cd examples
+sudo ./AdafruitDHT.py 22 7
 \end{console}
