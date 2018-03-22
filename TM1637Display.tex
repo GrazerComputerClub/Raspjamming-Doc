@@ -25,3 +25,19 @@ cd TM1637Display
 geany project.geany & 
 \end{console}
 
+\textbf{Python:}
+%git clone https://github.com/depklyon/raspberrypi-python-tm1637.git
+% orig link zu: https://goo.gl/KU1Jm2
+\begin{console}
+sudo apt-get install python3-pip
+sudo pip3 install wiringpi
+git clone https://goo.gl/KU1Jm2
+cd raspberrypi-python-tm1637
+sudo python3 setup.py install
+\end{console}
+
+\lstset{language=Python, caption=, 
+        label=TM1637Program, frame=single, basicstyle=\ttfamily
+	      \footnotesize, breakatwhitespace=false, showstringspaces=false, 
+        showtabs=false, tabsize=2 }
+\lstinputlisting{source/TM1637_Temp.py}
