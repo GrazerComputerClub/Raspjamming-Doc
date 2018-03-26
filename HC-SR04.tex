@@ -25,20 +25,11 @@
 	geany project.geany & 
 \end{console}
 
-\textbf{Python:}\\
+\textbf{Python:}
 
-DistanceSensor.py
-\begin{screensmall}
-	from gpiozero import DistanceSensor
-	from time import sleep
-	
-	sensor = DistanceSensor(echo=27, trigger=17, max_distance=2.0)
-	while True:
-		distance = sensor.distance * 100
-		print("Distance : %.1f cm" % distance)
-		sleep(1)	
-\end{screensmall}
+\lstset{language=Python, caption=, 
+        label=HCSR04Program, frame=single, basicstyle=\ttfamily
+	      \footnotesize, breakatwhitespace=false, showstringspaces=false, 
+        showtabs=false, tabsize=2 }
+\lstinputlisting{source/HC_SR04.py}
 
-\begin{console}
-python3 DistanceSensor.py
-\end{console}
