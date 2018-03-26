@@ -18,13 +18,29 @@
 \end{figure}
 
 
-%\textbf{Programm:} 
+\textbf{C:}
 
 \begin{console}
-cd ~
 git clone https://github.com/technion/lol_dht22
 cd lol_dht22
 ./configure
 make
 sudo ./loldht 7
 \end{console}
+
+\textbf{Python:}
+
+%git clone https://github.com/jdupl/dhtxx-rpi-python3
+%orig link git clone https://goo.gl/D6m2h6
+\begin{console}
+git clone https://goo.gl/D6m2h6
+cd dhtxx-rpi-python3
+cp dhtxx.py ..
+cd ..
+\end{console}
+
+\lstset{language=Python, caption=, 
+        label=DHT22Program, frame=single, basicstyle=\ttfamily
+	      \footnotesize, breakatwhitespace=false, showstringspaces=false, 
+        showtabs=false, tabsize=2 }
+\lstinputlisting{source/DHT22.py}

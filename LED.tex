@@ -1,16 +1,10 @@
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[scale=0.25, angle=-90]{images/LED_Steckplatine.png}	
+  \includegraphics[scale=0.25]{images/LED_Steckplatine.png}	
+  \includegraphics[scale=0.25]{images/LED_Schaltplan.png}
   %	\caption{}
   \label{LED_Steckplatine}
-\end{figure}
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[scale=0.25]{images/LED_Schaltplan.png}	
-	%	\caption{}
-	\label{LED_Schaltplan}
 \end{figure}
 
 \subsection{Shell}
@@ -19,6 +13,7 @@
 	gpio -g mode 17 out
 	gpio -g write 17 1
 	gpio -g write 17 0
+	for i in {1..3}; do gpio -g write 17 1; sleep 1; gpio -g write 17 0; sleep 1; done
 	gpio -g mode 17 in
 \end{console}
 
@@ -28,42 +23,20 @@
 % gpio drive 0 3  8 mA <- default
 % gpio drive 0 7  16 mA
 
-
-
-\subsection{C\#}
-
-\begin{console}
-	geany &
-\end{console}
-
-Nun kann man ein neues Projekt erstellen. Dazu wählt man \texttt{Projekt} $\rightarrow$ \texttt{Neu...}. Dann gibt man den Namen des Projekts an, z.~B. Raspjamming. Das Anlegen der Verzeichnisse muss danach auch noch bestätigt werden. Nachfolgend unter \texttt{Datei} $\rightarrow$ \texttt{Speichern unter} die unbenannte Datei mit dem Namen "`Blink.cs"' speichern. Nun kann man den folgenden C\#-Source eingeben.\\
-
-\lstset{language=C, caption=, label=LEDProgramCS, frame=single, basicstyle=\ttfamily
-	\footnotesize, breakatwhitespace=false, showstringspaces=false, showtabs=false, tabsize=2 }
-\lstinputlisting{source/Blink.cs}
-
-Um das Programm kompilieren zu können, muss im Menü unter \texttt{Erstellen}
-$\rightarrow$ \texttt{Kommandos zum Erstellen konfigurieren} der Pfad zur Sourcedatei des C\# WiringPi 
-Wrapper (siehe \ref{WiringPiCS}) hinzugefügt werden. Hierfür im Textfeld 'Kompilieren' den Pfad z.~B. WiringPi.cs ergänzen.\\
-\texttt{mcs /t:winexe \textquotedblleft\%f\textquotedblright} \textbf{WiringPi.cs} \texttt{/r:System,System.Drawing}\\
-
-Anschließend kann man das Programm mit dem Ziegel-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Erstellen.png} erstellen bzw. kompilieren und mit dem Zahnrad-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Ausfuehren.png} ausführen.
-Das Programm kann mit der Tastenkombination \framebox{Strg}+\framebox{C} vorzeitig beendet werden.
-
-
+\clearpage
 \subsection{C}
 
 \begin{console}
 	geany &
 \end{console}
 
-Nun kann man ein neues Projekt erstellen, dazu wählt man \texttt{Projekt} $\rightarrow$ \texttt{Neu...}. Dann Gibt man den Namen des Projekts an, z.~B. PyBlink. Das Anlegen der Verzeichnisse muss man auch noch bestätigen. 
+Nun kann man ein neues Projekt erstellen, dazu wählt man \texttt{Projekt} $\rightarrow$ \texttt{Neu...}. Dann Gibt man den Namen des Projekts an, z.~B. Blink. Das Anlegen der Verzeichnisse muss man auch noch bestätigen. 
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[scale=0.48]{images/Geany_Projekt.png}
 	\includegraphics[scale=0.42]{images/Geany_Projekt2.png}
-%	\caption{}
+	%	\caption{}
 	\label{Geany-create}
 \end{figure}
 
@@ -84,6 +57,39 @@ Jetzt darf man nicht vergessen im Menü unter \texttt{Erstellen} $\rightarrow$ \t
 
 Nun kann man das Projekt mit den Ziegel-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Erstellen.png} erstellen bzw. kompilieren und danach mit dem Zahnrad-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Ausfuehren.png} ausführen. Beendet wird das Programm mit der Tastenkombination \framebox{Strg}+\framebox{C}. 
 
+
+\clearpage
+\subsection{C\#}
+
+\begin{console}
+	geany &
+\end{console}
+
+Nun kann man ein neues Projekt erstellen. Dazu wählt man \texttt{Projekt} $\rightarrow$ \texttt{Neu...}. Dann gibt man den Namen des Projekts an, z.~B. Raspjamming. Das Anlegen der Verzeichnisse muss danach auch noch bestätigt werden. Nachfolgend unter \texttt{Datei} $\rightarrow$ \texttt{Speichern unter} die unbenannte Datei mit dem Namen "`Blink.cs"' speichern. Nun kann man den folgenden C\#-Source eingeben.\\
+
+\lstset{language=C, caption=, label=LEDProgramCS, frame=single, basicstyle=\ttfamily
+	\footnotesize, breakatwhitespace=false, showstringspaces=false, showtabs=false, tabsize=2 }
+\lstinputlisting{source/Blink.cs}
+
+Um das Programm kompilieren zu können, muss im Menü unter \texttt{Erstellen}
+$\rightarrow$ \texttt{Kommandos zum Erstellen konfigurieren} der Pfad zur Sourcedatei des C\# WiringPi 
+Wrapper (siehe \ref{WiringPiCS}) hinzugefügt werden. Hierfür im Textfeld 'Kompilieren' den Pfad z.~B. WiringPi.cs ergänzen.\\
+\texttt{mcs /t:winexe \textquotedblleft\%f\textquotedblright} \textbf{WiringPi.cs} \texttt{/r:System,System.Drawing}\\
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.48]{images/Geany_Set_cs.png}
+	%	\caption{}
+	\label{Geany-setpy3}
+\end{figure}
+
+
+Anschließend kann man das Programm mit dem Kompilieren-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Kompilieren.png} erstellen bzw. kompilieren und mit dem Zahnrad-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Ausfuehren.png} ausführen.
+Das Programm kann mit der Tastenkombination \framebox{Strg}+\framebox{C} vorzeitig beendet werden.
+
+
+\clearpage
 \subsection{Python}
 
 \begin{console}
@@ -113,9 +119,10 @@ ersetzen.
 
 Anschließend kann man das Programm mit dem Zahnrad-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Ausfuehren.png} ausführen. Achtung, nach dem Start braucht die Initialisierung der GPIOZero Library ein paar Sekunden bevor das Programm startet. Beendet wird das Programm mit der Tastenkombination \framebox{Strg}+\framebox{C}.
 
+
 \subsection{Assembler}
-Echte Hardcore-Programmierer können natürlich auch das LED-Beispiel in Assembler 
-schreiben\ldots
+Echte Hardcore-Programmierer können natürlich auch das Beispiel in Assembler 
+schreiben.
 
 \lstset{language=[x86masm]Assembler, caption=, 
         label=LEDProgram, frame=single, basicstyle=\ttfamily

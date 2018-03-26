@@ -8,46 +8,28 @@
 
 %\begin{figure}[ht]
 %	\centering
-%	\includegraphics[scale=0.25]{images/LED_Schaltplan.png}	
+%	\includegraphics[scale=0.25]{images/TrafficLight_Schaltplan.png}	
 %	%	\caption{}
 %	\label{LED_Schaltplan}
 %\end{figure}
 
-\subsection{Shell}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.08]{images/Ampel_Rot.png}	
+	\includegraphics[scale=0.08]{images/Ampel_RotGelb.png}
+	\includegraphics[scale=0.08]{images/Ampel_Gruen.png}
+	\includegraphics[scale=0.08]{images/Ampel_Aus.png}
+	\includegraphics[scale=0.08]{images/Ampel_Gruen.png}
+	\includegraphics[scale=0.08]{images/Ampel_Aus.png}
+	\includegraphics[scale=0.08]{images/Ampel_Gruen.png}
+	\includegraphics[scale=0.08]{images/Ampel_Aus.png}
+	\includegraphics[scale=0.08]{images/Ampel_Gruen.png}
+	\includegraphics[scale=0.08]{images/Ampel_Gelb.png}
+	%	\caption{}
+	\label{Ampel_Ablauf}
+\end{figure}
 
-%\begin{console}
-%	gpio -g mode 17 out
-%	gpio -g write 17 1
-%	gpio -g write 17 0
-%	gpio -g mode 17 in
-%\end{console}
-
-%https://de.scribd.com/doc/101830961/GPIO-Pads-Control2
-
-% gpio drive 0 0  2 mA
-% gpio drive 0 3  8 mA <- default
-% gpio drive 0 7  16 mA
-
-
-\subsection{C\#}
-
-\begin{console}
-	geany &
-\end{console}
-
-Nun kann man ein neues Projekt erstellen. Dazu wählt man \texttt{Projekt} $\rightarrow$ \texttt{Neu...}. Dann gibt man den Namen des Projekts an, z.~B. Raspjamming. Das Anlegen der Verzeichnisse muss danach auch noch bestätigt werden. Nachfolgend unter \texttt{Datei} $\rightarrow$ \texttt{Speichern unter} die unbenannte Datei mit dem Namen "`TrafficLight.cs"' speichern. Nun kann man den folgenden C\#-Source eingeben.\\
-
-\lstset{language=C, caption=, label=TrafficLightProgramCS, frame=single, basicstyle=\ttfamily
-	\footnotesize, breakatwhitespace=false, showstringspaces=false, showtabs=false, tabsize=2 }
-\lstinputlisting{source/TrafficLight.cs}
-
-Um das Programm kompilieren zu können, muss im Menü unter \texttt{Erstellen}
-$\rightarrow$ \texttt{Kommandos zum Erstellen konfigurieren} der Pfad zur Sourcedatei des C\# WiringPi 
-Wrapper (siehe \ref{WiringPiCS}) hinzugefügt werden. Hierfür im Textfeld 'Kompilieren' den Pfad z.~B. WiringPi.cs ergänzen.\\
-\texttt{mcs /t:winexe \textquotedblleft\%f\textquotedblright} \textbf{WiringPi.cs} \texttt{/r:System,System.Drawing}\\
-
-Anschließend kann man das Programm mit dem Ziegel-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Erstellen.png} erstellen bzw. kompilieren und mit dem Zahnrad-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Ausfuehren.png} ausführen.
-Das Programm kann mit der Tastenkombination \framebox{Strg}+\framebox{C} vorzeitig beendet werden.
+%\subsection{Shell}
 
 \subsection{C}
 
@@ -82,6 +64,35 @@ Jetzt darf man nicht vergessen im Menü unter \texttt{Erstellen} $\rightarrow$ \t
 
 Nun kann man das Projekt mit den Ziegel-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Erstellen.png} erstellen bzw. kompilieren und danach mit dem Zahnrad-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Ausfuehren.png}  ausführen.  
 
+\clearpage
+\subsection{C\#}
+
+\begin{console}
+	geany &
+\end{console}
+
+Nun kann man ein neues Projekt erstellen. Dazu wählt man \texttt{Projekt} $\rightarrow$ \texttt{Neu...}. Dann gibt man den Namen des Projekts an, z.~B. Raspjamming. Das Anlegen der Verzeichnisse muss danach auch noch bestätigt werden. Nachfolgend unter \texttt{Datei} $\rightarrow$ \texttt{Speichern unter} die unbenannte Datei mit dem Namen "`TrafficLight.cs"' speichern. Nun kann man den folgenden C\#-Source eingeben.\\
+
+\lstset{language=C, caption=, label=TrafficLightProgramCS, frame=single, basicstyle=\ttfamily
+	\footnotesize, breakatwhitespace=false, showstringspaces=false, showtabs=false, tabsize=2 }
+\lstinputlisting{source/TrafficLight.cs}
+
+Um das Programm kompilieren zu können, muss im Menü unter \texttt{Erstellen}
+$\rightarrow$ \texttt{Kommandos zum Erstellen konfigurieren} der Pfad zur Sourcedatei des C\# WiringPi 
+Wrapper (siehe \ref{WiringPiCS}) hinzugefügt werden. Hierfür im Textfeld 'Kompilieren' den Pfad z.~B. WiringPi.cs ergänzen.\\
+\texttt{mcs /t:winexe \textquotedblleft\%f\textquotedblright} \textbf{WiringPi.cs} \texttt{/r:System,System.Drawing}\\
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.48]{images/Geany_Set_cs.png}
+	%	\caption{}
+	\label{Geany-setpy3}
+\end{figure}
+
+Anschließend kann man das Programm mit dem Kompilieren-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Kompilieren.png} erstellen bzw. kompilieren und mit dem Zahnrad-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Ausfuehren.png} ausführen.
+Das Programm kann mit der Tastenkombination \framebox{Strg}+\framebox{C} vorzeitig beendet werden.
+
+\clearpage
 \subsection{Python}
 Um das Python Programm auszuführen muss man eine neue Datei anlegen und 
 unter \texttt{Datei} $\rightarrow$ \texttt{Speichern unter} die

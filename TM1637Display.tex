@@ -15,14 +15,29 @@
 	\label{TM1637}
 \end{figure}
 
-%\textbf{Programm:} 
+%https://www.mpja.com/download/31227sc.pdf
+
+\textbf{C:} 
 
 \begin{console}
-cd ~/
 git clone https://github.com/mstroh76/TM1637Display
 cd TM1637Display
 geany project.geany & 
 \end{console}
 
+\textbf{Python:}
+%git clone https://github.com/depklyon/raspberrypi-python-tm1637.git
+% orig link zu: https://goo.gl/KU1Jm2
+\begin{console}
+sudo apt-get install python3-pip
+sudo pip3 install wiringpi
+git clone https://goo.gl/KU1Jm2
+cd raspberrypi-python-tm1637
+sudo python3 setup.py install
+\end{console}
 
-%https://www.mpja.com/download/31227sc.pdf
+\lstset{language=Python, caption=, 
+        label=TM1637Program, frame=single, basicstyle=\ttfamily
+	      \footnotesize, breakatwhitespace=false, showstringspaces=false, 
+        showtabs=false, tabsize=2 }
+\lstinputlisting{source/TM1637_Temp.py}
