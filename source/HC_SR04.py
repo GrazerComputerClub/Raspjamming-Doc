@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*
+
 from time import sleep
 from gpiozero import DistanceSensor
 # Be aware not to use a GPIO with a physical pull-up resistor 

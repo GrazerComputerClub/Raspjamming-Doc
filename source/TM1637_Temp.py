@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*
+
 from tm1637 import TM1637
 from gpiozero import CPUTemperature
 from time import sleep

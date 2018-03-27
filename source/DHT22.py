@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*
+
 dht = DHT22(3)
 tm = TM1637 (clk=10, dio=9)
 tm.brightness(3)
