@@ -7,12 +7,17 @@ BUILDTEX=$(TEX) "$(PROJECT).tex"
 BUILDTEX2=$(TEX) "$(PROJECT2).tex"
 
 
-all:
+
+doku:
 	- ${BUILDTEX} && ${BUILDTEX} && ${BUILDTEX}
+
+admindoku: 
 	- ${BUILDTEX2} && ${BUILDTEX2} && ${BUILDTEX2}
 
-clean-all:
-	- /bin/rm -f *.dvi *.log *.bak *.aux *.bbl *.blg *.idx *.ps *.eps *.pdf *.toc *.out *~
+all: clean-all doku admindoku
+
+clean-all: clean
+	- /bin/rm -f *.dvi *.ps *.eps *.pdf
 
 clean:
 	- /bin/rm -f *.log *.bak *.aux *.bbl *.blg *.idx *.toc *.out *~
