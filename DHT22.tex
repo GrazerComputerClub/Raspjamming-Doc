@@ -21,22 +21,17 @@
 \textbf{C:}
 
 \begin{console}
-git clone https://github.com/technion/lol_dht22
-cd lol_dht22
-./configure
-make
-sudo ./loldht 7
+git clone https://github.com/mstroh76/Sensors-WiringPi.git
+cd Sensors-WiringPi/DHT
+g++ -o DHT *.cpp -lwiringPi	
+sudo ./DHT 4
 \end{console}
 
 \textbf{Python:}
-
-%git clone https://github.com/jdupl/dhtxx-rpi-python3
-%orig link git clone https://goo.gl/D6m2h6
+% Projektverzeichnis?
 \begin{console}
-git clone https://goo.gl/D6m2h6
-cd dhtxx-rpi-python3
-cp dhtxx.py ..
-cd ..
+git clone https://github.com/jdupl/dhtxx-rpi-python3.git
+sudo cp dhtxx-rpi-python3/dhtxx.py /usr/local/lib/python3.5/dist-packages/
 \end{console}
 
 \lstset{language=Python, caption=, 

@@ -1,9 +1,11 @@
+# -*- coding: utf-8 -*
+
 from time import sleep
 from gpiozero import DistanceSensor
 # Be aware not to use a GPIO with a physical pull-up resistor 
 # like GPIO3, otherwise gpiozero will raise an exception because
 # it can't deactivate the pull-up
-ds = DistanceSensor(echo=18, trigger=17)
+ds = DistanceSensor(echo=27, trigger=17)
 
 # Measure and print distance periodically
 while True:

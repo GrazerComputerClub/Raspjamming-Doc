@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*
+
 from gpiozero import TrafficLights
 from time import sleep
 
