@@ -27,6 +27,16 @@ g++ -o DHT *.cpp -lwiringPi
 sudo ./DHT 4
 \end{console}
 
+\textbf{C\#:}
+
+\begin{console}
+git clone https://github.com/chirndler/wiringpi.net.sensors.git
+cd wiringpi.net.sensors
+xbuild /p:Configuration=Release wiringpi.net.sensors.sln
+cd bin/Release/
+sudo mono wiringpi.net.sensors.sample.exe 1
+\end{console}
+
 \textbf{Python:}
 % Projektverzeichnis?
 \begin{console}
