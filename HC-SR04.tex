@@ -17,12 +17,31 @@
 	\label{DHT22_Steckplatine}
 \end{figure}
 
+\ExerciseBox{
+Miss die Distanz [Beispiele]\\
+Gib den Wert zyklisch am TM1637 Display aus [Beispiel Python]\\
+Filtere die gemessene Distanz\\
+Ermittle die Geschwindigkeit eines bewegten Objektes\\
+Verwende die korrigierte Schallgeschwindingkeit bei aktueller Lufttemperatur vom DHT22}
+
+
 \textbf{C:} 
 
 \begin{console}
-	git clone https://github.com/mstroh76/HC-SR04Sensor
-	cd HC-SR04Sensor
-	geany project.geany & 
+	git clone https://github.com/mstroh76/Sensors-WiringPi.git
+	cd Sensors-WiringPi/HC-SR04	
+	g++ -o HC-SR04 *.cpp -lwiringPi	
+	sudo ./HC-SR04
+\end{console}
+
+\textbf{C\#:}
+
+\begin{console}
+	git clone https://github.com/chirndler/wiringpi.net.sensors.git
+	cd wiringpi.net.sensors
+	xbuild /p:Configuration=Release wiringpi.net.sensors.sln
+	cd bin/Release/
+	sudo mono wiringpi.net.sensors.sample.exe 2
 \end{console}
 
 \textbf{Python:}

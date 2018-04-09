@@ -1,37 +1,42 @@
 
-%\textbf{Anschluss:} 
-
 \begin{figure}[ht]
   \centering
-  \includegraphics[scale=1.0, angle=-90]{images/DHT22_Steckplatine.png}	
+  \includegraphics[scale=0.24]{images/DHT22_Steckplatine.png}	
+  \includegraphics[scale=0.25]{images/DHT22_Schaltplan.png}	
   %	\caption{}
   \label{DHT22_Steckplatine}
 \end{figure}
 
-%\textbf{Schaltplan:} 
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[scale=0.25]{images/DHT22_Schaltplan.png}	
-	%	\caption{}
-	\label{DHT22_Steckplatine}
-\end{figure}
+\ExerciseBox{
+Lies Temperatur und Feuchte aus [Beispiele]\\
+Gib die Werte am TM1637 Display aus}
 
 
 \textbf{C:}
 
 \begin{console}
-git clone https://github.com/mstroh76/Sensors-WiringPi.git
-cd Sensors-WiringPi/DHT
-g++ -o DHT *.cpp -lwiringPi	
-sudo ./DHT 4
+	git clone https://github.com/mstroh76/Sensors-WiringPi.git
+	cd Sensors-WiringPi/DHT
+	g++ -o DHT *.cpp -lwiringPi	
+	sudo ./DHT 4
+\end{console}
+
+\textbf{C\#:}
+
+\begin{console}
+	git clone https://github.com/chirndler/wiringpi.net.sensors.git
+	cd wiringpi.net.sensors
+	xbuild /p:Configuration=Release wiringpi.net.sensors.sln
+	cd bin/Release/
+	sudo mono wiringpi.net.sensors.sample.exe 1
 \end{console}
 
 \textbf{Python:}
 % Projektverzeichnis?
 \begin{console}
-git clone https://github.com/jdupl/dhtxx-rpi-python3.git
-sudo cp dhtxx-rpi-python3/dhtxx.py /usr/local/lib/python3.5/dist-packages/
+	git clone https://github.com/jdupl/dhtxx-rpi-python3.git
+	sudo cp dhtxx-rpi-python3/dhtxx.py /usr/local/lib/python3.5/dist-packages/
 \end{console}
 
 \lstset{language=Python, caption=, 

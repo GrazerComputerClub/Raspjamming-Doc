@@ -3,7 +3,7 @@
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[scale=0.25, angle=-90]{images/TM1637_Steckplatine.png}	
+  \includegraphics[scale=0.25]{images/TM1637_Steckplatine.png}	
   %	\caption{}
   \label{TM1637}
 \end{figure}
@@ -15,25 +15,40 @@
 	\label{TM1637}
 \end{figure}
 
+\ExerciseBox{
+Gib Zahlen und Texte aus [Beispiele]\\
+Gib die aktuelle CPU Temperatur aus [Beispiel Python]\\
+Gib die gemittelte aktuelle CPU Last in Prozent aus}
+
 %https://www.mpja.com/download/31227sc.pdf
 
 \textbf{C:} 
 
 \begin{console}
-git clone https://github.com/mstroh76/TM1637Display
-cd TM1637Display
-geany project.geany & 
+	git clone https://github.com/mstroh76/TM1637Display
+	cd TM1637Display
+	geany project.geany & 
+\end{console}
+
+\textbf{C\#:}
+
+\begin{console}
+	git clone https://github.com/chirndler/wiringpi.net.sensors.git
+	cd wiringpi.net.sensors
+	xbuild /p:Configuration=Release wiringpi.net.sensors.sln
+	cd bin/Release/
+	sudo mono wiringpi.net.sensors.sample.exe 3
 \end{console}
 
 \textbf{Python:}
 %git clone https://github.com/depklyon/raspberrypi-python-tm1637.git
 % orig link zu: https://goo.gl/KU1Jm2
 \begin{console}
-sudo apt-get install python3-pip
-sudo pip3 install wiringpi
-git clone https://goo.gl/KU1Jm2
-cd raspberrypi-python-tm1637
-sudo python3 setup.py install
+	sudo apt-get install python3-pip
+	sudo pip3 install wiringpi
+	git clone https://goo.gl/KU1Jm2
+	cd raspberrypi-python-tm1637
+	sudo python3 setup.py install
 \end{console}
 
 \lstset{language=Python, caption=, 
