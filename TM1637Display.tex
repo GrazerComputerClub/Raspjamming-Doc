@@ -30,6 +30,16 @@ cd TM1637Display
 geany project.geany & 
 \end{console}
 
+\textbf{C\#:}
+
+\begin{console}
+git clone https://github.com/chirndler/wiringpi.net.sensors.git
+cd wiringpi.net.sensors
+xbuild /p:Configuration=Release wiringpi.net.sensors.sln
+cd bin/Release/
+sudo mono wiringpi.net.sensors.sample.exe 3
+\end{console}
+
 \textbf{Python:}
 %git clone https://github.com/depklyon/raspberrypi-python-tm1637.git
 % orig link zu: https://goo.gl/KU1Jm2
