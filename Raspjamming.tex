@@ -24,6 +24,44 @@
 % Rechts nichts
 \fancyhead[R]{}
 
+\usepackage[many]{tcolorbox}
+\usepackage{xcolor}
+\usepackage{floatflt}
+\usepackage{tabularx}
+\definecolor{lightyellow}{RGB}{254,254,230}
+\newcommand{\ExerciseBox}[1]{
+	
+	\begin{floatingfigure}[l]{0pt}
+		\includegraphics[scale=0.2]{images/Raspberry-Penguin.png}
+	\end{floatingfigure}
+			
+	\begin{tcolorbox}[colframe=red, colback=lightyellow, boxsep=0mm, arc=3mm, grow to left by=0cm,grow to right by=0cm]
+		%\includegraphics[scale=0.15]{images/Raspberry-Penguin.png}
+		
+		%\begin{floatingfigure}[l]{0pt}
+		%\includegraphics[scale=0.15]{images/Raspberry-Penguin.png}
+		%\end{floatingfigure}
+		
+		\sffamily{#1}
+	\end{tcolorbox}
+	\vspace{1cm}
+}
+
+\usepackage{blindtext}
+
+\usepackage{pifont,mdframed}
+
+\newenvironment{warning}
+{\par
+  \begin{mdframed}[linewidth=2pt,linecolor=red]%
+		\begin{list}{}{\leftmargin=1cm
+				\labelwidth=\leftmargin}\item[\Large]}
+		{\end{list}
+	\end{mdframed}
+	\par}
+
+
+
 \setcounter{tocdepth}{2}
 \setcounter{secnumdepth}{2} 
 
