@@ -1,0 +1,48 @@
+
+%\textbf{Raspberry Pi:}
+\begin{console}
+sudo -i
+apt-get update && apt-get -y upgrade
+apt-get clean
+apt-get install mono-complete
+apt-get clean
+apt-get install python-dev python-openssl rpi.gpio
+apt-get clean
+apt-get install python3-dev python3-openssl python3-rpi.gpio python3-gpiozero python3-pip
+apt-get clean
+apt-get install geany vim wiringpi pigpio git build-essential automake
+apt-get clean
+apt-get install minicom screen
+apt-get clean
+
+cd ~
+mkdir Projekte
+cd ~/Projekte
+
+git clone https://github.com/mstroh76/TM1637Display
+cd TM1637Display
+g++ -o TM1637Display *.cpp -lwiringPi
+cd ..
+git clone https://github.com/mstroh76/Sensors-WiringPi.git
+cd Sensors-WiringPi/DHT
+g++ -o DHT main.cpp DHT.cpp -lwiringPi
+cd ../HC-SR04
+g++ -o HC-SR04 main.cpp HC-SR04.cpp -lwiringPi
+
+cd ~/Projekte
+wget https://goo.gl/isrNeJ
+git clone https://github.com/chirndler/wiringpi.net.sensors.git
+cd wiringpi.net.sensors
+xbuild /p:Configuration=Release wiringpi.net.sensors.sln
+
+cd ~/Projekte
+pip3 install wiringpi
+git clone https://github.com/depklyon/raspberrypi-python-tm1637.git
+cd raspberrypi-python-tm1637
+python3 setup.py install
+cd ..
+git clone https://github.com/jdupl/dhtxx-rpi-python3.git
+cp dhtxx-rpi-python3/dhtxx.py /usr/local/lib/python3.5/dist-packages/
+
+reboot
+\end{console}

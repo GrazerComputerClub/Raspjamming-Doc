@@ -47,6 +47,8 @@ Nun kann man ein neues Projekt erstellen, dazu wählt man \texttt{Projekt} $\righ
 	\label{Geany-create}
 \end{figure}
 
+
+Weitere Einstellungen wie Zeichen für Einrückungen und Zeilenumbruch, können unter \texttt{Projekt} $\rightarrow$ \texttt{Eigenschaften} vorgenommen werden.\\
 Danach wählt man \texttt{Datei} $\rightarrow$ \texttt{Speichern unter} um die unbenannte Datei mit dem Namen "`Blink.c"' speichern zu können. Nun kann man den folgenden C-Source eingeben.
 
 \lstset{language=C, caption=, label=LEDProgram, frame=single, basicstyle=\ttfamily
@@ -72,7 +74,7 @@ Nun kann man das Projekt mit den Ziegel-Icon \includegraphics[scale=0.4]{images/
 	geany &
 \end{console}
 
-Nun kann man ein neues Projekt erstellen. Dazu wählt man \texttt{Projekt} $\rightarrow$ \texttt{Neu...}. Dann gibt man den Namen des Projekts an, z.~B. Raspjamming. Das Anlegen der Verzeichnisse muss danach auch noch bestätigt werden. Nachfolgend unter \texttt{Datei} $\rightarrow$ \texttt{Speichern unter} die unbenannte Datei mit dem Namen "`Blink.cs"' speichern. Nun kann man den folgenden C\#-Source eingeben.\\
+Nun kann man ein neues Projekt erstellen. Dazu wählt man \texttt{Projekt} $\rightarrow$ \texttt{Neu...}. Dann gibt man den Namen des Projekts an, z.~B. csBlink. Das Anlegen der Verzeichnisse muss danach auch noch bestätigt werden. Nachfolgend unter \texttt{Datei} $\rightarrow$ \texttt{Speichern unter} die unbenannte Datei mit dem Namen "`Blink.cs"' speichern. Nun kann man den folgenden C\#-Source eingeben.\\
 
 \lstset{language=C, caption=, label=LEDProgramCS, frame=single, basicstyle=\ttfamily
 	\footnotesize, breakatwhitespace=false, showstringspaces=false, showtabs=false, tabsize=2 }
@@ -80,7 +82,7 @@ Nun kann man ein neues Projekt erstellen. Dazu wählt man \texttt{Projekt} $\righ
 
 Um das Programm kompilieren zu können, muss im Menü unter \texttt{Erstellen}
 $\rightarrow$ \texttt{Kommandos zum Erstellen konfigurieren} der Pfad zur Sourcedatei des C\# WiringPi 
-Wrapper (siehe \ref{WiringPiCS}) hinzugefügt werden. Hierfür im Textfeld 'Kompilieren' den Pfad z.~B. WiringPi.cs ergänzen.\\
+Wrapper (siehe \ref{WiringPiCS}) hinzugefügt werden. Hierfür im Textfeld 'Kompilieren' den Pfad z.~B. WiringPi.cs ergänzen. 
 \texttt{mcs /t:winexe \textquotedblleft\%f\textquotedblright} \textbf{WiringPi.cs} \texttt{/r:System,System.Drawing}\\
 
 
@@ -91,6 +93,11 @@ Wrapper (siehe \ref{WiringPiCS}) hinzugefügt werden. Hierfür im Textfeld 'Kompil
 	\label{Geany-setpy3}
 \end{figure}
 
+Es muss die WiringPi Wrapper Datei in das Projektverzeichnis kopiert werden. 
+
+\begin{console}
+	cp ~/Projekte/WiringPi.cs ~/Projekte/csBlink/
+\end{console}
 
 Anschließend kann man das Programm mit dem Kompilieren-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Kompilieren.png} erstellen bzw. kompilieren und mit dem Zahnrad-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Ausfuehren.png} ausführen.
 Das Programm kann mit der Tastenkombination \framebox{Strg}+\framebox{C} vorzeitig beendet werden.

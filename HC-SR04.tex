@@ -19,9 +19,10 @@
 
 \ExerciseBox{
 Miss die Distanz [Beispiele]\\
-Gib den Wert zyklisch am TM1637 Display aus [Beispiel Python]\\
 Filtere die gemessene Distanz\\
 Ermittle die Geschwindigkeit eines bewegten Objektes\\
+Bewerte die Distanz mit der Ampel, Rot niedriger Abstand, Grün ausreichender Abstand     
+Gib den Wert zyklisch am TM1637 Display aus [Beispiel Python]\\
 Verwende die korrigierte Schallgeschwindingkeit bei aktueller Lufttemperatur vom DHT22}
 
 
@@ -31,7 +32,9 @@ Verwende die korrigierte Schallgeschwindingkeit bei aktueller Lufttemperatur vom
 	git clone https://github.com/mstroh76/Sensors-WiringPi.git
 	cd Sensors-WiringPi/HC-SR04	
 	g++ -o HC-SR04 *.cpp -lwiringPi	
-	sudo ./HC-SR04
+	./HC-SR04
+	cd ..
+	geany HC-SR04.geany &
 \end{console}
 
 \textbf{C\#:}
@@ -44,6 +47,7 @@ Verwende die korrigierte Schallgeschwindingkeit bei aktueller Lufttemperatur vom
 	sudo mono wiringpi.net.sensors.sample.exe 2
 \end{console}
 
+\clearpage
 \textbf{Python:}
 
 \lstset{language=Python, caption=, 
@@ -52,3 +56,6 @@ Verwende die korrigierte Schallgeschwindingkeit bei aktueller Lufttemperatur vom
         showtabs=false, tabsize=2 }
 \lstinputlisting{source/HC_SR04.py}
 
+\begin{console}
+	python3 HC_SR04.py
+\end{console}

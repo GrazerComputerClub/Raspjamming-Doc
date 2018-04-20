@@ -2,31 +2,35 @@
 
 Nach dem Herstellen der Verbindung zur Raspberry Pi über SSH, kann die grafische Entwicklungsumgebung Geany gestartet werden.
 
-%sudo apt-get install geany xterm
-
 \begin{console}
-cd ~
-geany &
+	cd ~
+	geany &
 \end{console}
 
 Soll Geany in Englisch ausgeführt werden obwohl das System auf Deutsch gestellt wurde, so muss man vor dem Start die Variable "`LANG"' auf "`C"' setzen.
 
 \begin{console}
-LANG=C geany &
+	LANG=C geany &
 \end{console}
 
 Nun kann eine Source-Datei geladen oder erstellt werden. Dann kann das Konfigurationsfenster geöffnet werden, indem man im Menü unter \texttt{Erstellen} $\rightarrow$ \texttt{Kommandos zum Erstellen konfigurieren} auswählt.\\
-Die Parameter für \texttt{Kompilieren} und \texttt{Erstellen} werden zwar bereits anhand der Source-Datei (Extention) vorbelegt. Zumeist müssen aber noch Anpassungen vorgenommen werden, um Bibliotheken oder geänderte Kompiler verwenden zu können. Was genau hier einzutragen ist, wird in den folgenden Beispielprogrammen der einzelnen Programmiersprachen angegeben.\\  
-Danach kann das Programm mit der Taste \texttt{Erstellen} erzeugt werden und mit der Taste \texttt{Ausführen} auch in einem Terminal gestartet werden.\\
-Die Tastenkürzel für alle Funktionen können über das Menü \texttt{Bearbeiten} $\rightarrow$ \texttt{Einstellungen} $\rightarrow$ \texttt{Tastenkürzel} vorgegeben werden. Dazu wählt man die gewünschte Aktion aus und drückt die Taste "`Ändern"'. Danach kann man die Taste bzw. Tastenkombination drücken, die dann umgehend im Dialog angezeigt wird. Wenn nun die OK-Taste gedrückt wird, wird die Änderung übernommen und das Tastenkürzel führt in Zukunft die Aktion aus. 
-Im Beispiel wurde der Aktion "`Erstellen"' dem Tastenkürzel bzw. der Taste \framebox{F7} zugewiesen. 
+Die Parameter für \texttt{Kompilieren} und \texttt{Erstellen} werden bereits anhand der Source-Datei (Extention) vorbelegt. Zumeist müssen aber noch Anpassungen vorgenommen werden, um Bibliotheken oder geänderte Kompiler verwenden zu können. Werden zwei Source-Dateien im Projekt benötigt, so müssen auch beide in der Anweisung vorkommen ("'g++ -o Zieldatei Quelldatei1.cpp Quelldatei2.cpp"'). Es können Platzhalter mit verschiedenen Funktionen eingefügt werden. \texttt{\%f} wird durch den Dateinamen der im Editor ausgewählten Datei ersetzt. \texttt{\%e} wird durch den Dateinamen ohne Extention der im Editor ausgewählten Datei ersetzt.\\   
+%f - replaced by the filename of the file selected in the editor when the menu item is selected.
+%e - replaced by the same filename but without the last extension.
+Was genau bei den Feldern einzutragen ist, wird in den folgenden Beispielprogrammen der einzelnen Programmiersprachen angegeben.\\    
 
-%\begin{figure}[ht]
-%  \centering
-%  \includegraphics[scale=0.48]{images/Geany_Create.png}
-%  \caption{Kommandos zum Erstellen konfigurieren für C Projekt}
-%  \label{Geany-create}
-%\end{figure}
+Danach kann das Programm mit der Taste \texttt{Erstellen} erzeugt werden und mit der Taste \texttt{Ausführen} in einem Terminal gestartet werden.\\
+Die Tastenkürzel für alle Funktionen können über das Menü \texttt{Bearbeiten} $\rightarrow$ \texttt{Einstellungen} $\rightarrow$ \texttt{Tastenkürzel} vorgegeben werden. Dazu wählt man die gewünschte Aktion aus und drückt die Taste "`Ändern"'. Danach kann man die Taste bzw. Tastenkombination drücken, die dann umgehend im Dialog angezeigt wird. Wenn nun die OK-Taste gedrückt wird, wird die Änderung übernommen und das Tastenkürzel führt in Zukunft die Aktion aus. 
+Im Beispiel wurde der Aktion "`Erstellen"' dem Tastenkürzel bzw. der Taste \framebox{F7} zugewiesen.\\ 
+Eine Beschreibung zur Erstellung und Parametrierung eines Projekts kann dem Kapitel \ref{sec:Projekt_LED} \titleref{sec:Projekt_LED} bzw. \ref{sec:Projekt_Ampel} \titleref{sec:Projekt_Ampel} 
+entnommen werden.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.48]{images/Geany_Create.png}
+  \caption{Kommandos zum Erstellen konfigurieren für C Projekt}
+  \label{Geany-create}
+\end{figure}
 
 \begin{figure}[ht]
   \centering

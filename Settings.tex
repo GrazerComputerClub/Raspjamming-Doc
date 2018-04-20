@@ -1,3 +1,4 @@
+Folgende Einstellungen sind bei vorbereiteten Image bereits durchgeführt worden, zur Veranschaulichung aber nochmals explizit aufgelistet.\\
 
 Als erstes kann das Raspberry Pi Software Configuration Tool (raspi-config)  gestartet werden. Dazu verwendet man den Aufruf "`sudo raspi-config"'.\\
 Der Menüpunkt "`Change User Password"' ändert das Passwort für den Benutzer "`pi"'.\\
@@ -12,3 +13,5 @@ Bei der dritten Einstellung "`Change Keyboard Layout"' kann man das Tastatur-Lay
 %Key to function as AltGr: The default for the keyboard layout\\
 %Compose key: No compose key\\
 %Use Control+Alt+Backspace to terminate the X server?: <Yes>\\
+Nun kann noch die Speicherzuweisung der GPU auf lediglich 32~MB gesetzt werden. Dazu wählt man den Menüpunkt  "`Advanced Options"' und "`Memory Split"', dann kann man 32 für die Speichergröße eingeben.\\ 
+Nach dem Beenden des Programms muss kein Reboot durchgeführt werden. 

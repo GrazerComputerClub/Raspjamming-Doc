@@ -1,5 +1,6 @@
 
-Für den USB Gadget Modus der Raspberry Pi Zero wird bereits eine vorkonfigurierte MicroSD-Karte bzw. ein MicroSD-Karten-Image zur Verfügung gestellt. Darauf sind bereits alle Voreinstellungen getroffen worden sodass nur eine minimale Anpassung erfolgen muss. Sollte die Einrichtung manuell erfolgen so muss man sich das PDF-Dokument 'Raspberry Pi Jam - Raspjamming Admin' besorgen. 
+Für den USB Gadget Modus der Raspberry Pi Zero wird bereits eine vorkonfigurierte MicroSD-Karte bzw. ein MicroSD-Karten-Image zur Verfügung gestellt. Darauf sind bereits alle Voreinstellungen durchgeführt worden.\\
+\textbf{Sollte die Einrichtung manuell erfolgen oder wird Microsoft Windows als Host verwendet, so muss man sich das PDF-Dokument 'Raspberry Pi Jam - Raspjamming Admin' besorgen.} 
 
 \subsection{Host (DHCP-Client)}
 %\clearpage
@@ -19,7 +20,7 @@ Alternativ können die Einstellungen auch automatisch über eine Shell-Script durc
 
 \subsection{SSH über Shell-Script} \label{sec:shellscript}
 
-Das Einfachste ist die Verbindung zu Raspberry Pi über das vorbereitete PiConnect.sh Shell-Script herzustellen. Es setzt automatisch die Internetweiterleitung und startet die SSH-Verbindung. Es kann vom vorbereitetet Raspbian Image oder von Github geladen werden.
+Das Einfachste ist die Verbindung zu Raspberry Pi über das vorbereitete PiConnect.sh Shell-Script herzustellen. Es setzt automatisch die Internetweiterleitung und startet die SSH-Verbindung. Es kann vom vorbereitetet Raspbian-Image oder von Github geladen werden.
 
 \begin{console} 
 	scp pi@raspberrypi.local:/home/pi/scripts/PiConnect.sh .

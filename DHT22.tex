@@ -10,7 +10,7 @@
 
 \ExerciseBox{
 Lies Temperatur und Feuchte aus [Beispiele]\\
-Gib die Werte am TM1637 Display aus}
+Gib die Werte zyklisch am TM1637 Display aus}
 
 
 \textbf{C:}
@@ -19,7 +19,9 @@ Gib die Werte am TM1637 Display aus}
 	git clone https://github.com/mstroh76/Sensors-WiringPi.git
 	cd Sensors-WiringPi/DHT
 	g++ -o DHT *.cpp -lwiringPi	
-	sudo ./DHT 4
+	watch -n 2 ./DHT 4
+	cd ..
+	geany DHT.geany &
 \end{console}
 
 \textbf{C\#:}
@@ -44,3 +46,7 @@ Gib die Werte am TM1637 Display aus}
 	      \footnotesize, breakatwhitespace=false, showstringspaces=false, 
         showtabs=false, tabsize=2 }
 \lstinputlisting{source/DHT22.py}
+
+\begin{console}
+	python3 DHT22.py
+\end{console}
