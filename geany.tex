@@ -1,19 +1,19 @@
 \subsection{Geany - Entwicklungsumgebung}
 
-Nach dem Herstellen der Verbindung zur Raspberry Pi über SSH, kann die grafische Entwicklungsumgebung Geany gestartet werden.
+Nach dem Herstellen der Verbindung zur Raspberry Pi über SSH kann die grafische Entwicklungsumgebung Geany gestartet werden.
 
 \begin{console}
 	cd ~
 	geany &
 \end{console}
 
-Soll Geany in Englisch ausgeführt werden obwohl das System auf Deutsch gestellt wurde, so muss man vor dem Start die Variable "`LANG"' auf "`C"' setzen.
+Soll Geany in Englisch ausgeführt werden, obwohl das System auf Deutsch gestellt wurde, so muss man vor dem Start die Variable "`LANG"' auf "`C"' setzen.
 
 \begin{console}
 	LANG=C geany &
 \end{console}
 
-Nun kann eine Source-Datei geladen oder erstellt werden. Dann kann das Konfigurationsfenster geöffnet werden, indem man im Menü unter \texttt{Erstellen} $\rightarrow$ \texttt{Kommandos zum Erstellen konfigurieren} auswählt.\\
+Nun kann eine Source-Datei geladen oder erstellt werden. Dann kann das Konfigurationsfenster geöffnet werden, indem man im Menü \texttt{Erstellen} $\rightarrow$ \texttt{Kommandos zum Erstellen konfigurieren} auswählt.\\
 Die Parameter für \texttt{Kompilieren} und \texttt{Erstellen} werden bereits anhand der Source-Datei (Extention) vorbelegt. Zumeist müssen aber noch Anpassungen vorgenommen werden, um Bibliotheken oder geänderte Kompiler verwenden zu können. Werden zwei Source-Dateien im Projekt benötigt, so müssen auch beide in der Anweisung vorkommen ("'g++ -o Zieldatei Quelldatei1.cpp Quelldatei2.cpp"'). Es können Platzhalter mit verschiedenen Funktionen eingefügt werden. \texttt{\%f} wird durch den Dateinamen der im Editor ausgewählten Datei ersetzt. \texttt{\%e} wird durch den Dateinamen ohne Extention der im Editor ausgewählten Datei ersetzt.\\   
 %f - replaced by the filename of the file selected in the editor when the menu item is selected.
 %e - replaced by the same filename but without the last extension.

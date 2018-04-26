@@ -15,7 +15,7 @@ Warning: Permanently added 'raspberrypi.local,169.254.229.192' (ECDSA) to the li
 
 Die Frage muss mit \texttt{yes} bestätigt werden. Anschließend muss das Default-Passwort von Raspbian \textbf{\texttt{raspberry}} eingegeben werden. Nun sollte man den Raspberry Pi Prompt \texttt{pi@rasbperrypi:\textasciitilde  \$} sehen. 
 
-Wechselt man zu einem anderen Raspberry Pi mit den gleichen Namen, so kann es passieren, dass eine Fehlermeldung ausgegeben wird weil sich der kryptographische Schlüssel geändert hat.
+Wechselt man zu einem anderen Raspberry Pi mit den gleichen Namen, so kann es passieren, dass eine Fehlermeldung ausgegeben wird, weil sich der kryptographische Schlüssel geändert hat.
 
 \begin{screensmall} 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -50,5 +50,5 @@ In diesem Fall muss man die Verbindung aus den bekannten Hosts löschen. Hierfür 
 	ssh-keygen -R raspberrypi.local
 \end{console}
 
-Optional kann auch der Parameter \texttt{-o UserKnownHostsFile=/dev/null} beim ssh-Befehl hinzugefügt werden. Dann erfolgt kein Überprüfung der Verbindung. 
+Optional kann auch der Parameter \texttt{-o UserKnownHostsFile=/dev/null} beim ssh-Befehl hinzugefügt werden. Dann erfolgt keine Überprüfung der Verbindung. 
 

@@ -14,35 +14,114 @@ apt-get install geany vim wiringpi pigpio git build-essential automake
 apt-get clean
 apt-get install minicom screen
 apt-get clean
-
+apt-get install zsh
+wget -O .zshrc https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
+chmod --shell /bin/zsh pi
+apt-get clean
 cd ~
 mkdir Projekte
-cd ~/Projekte
-
+cd Projekte
 git clone https://github.com/mstroh76/TM1637Display
-cd TM1637Display
-g++ -o TM1637Display *.cpp -lwiringPi
-cd ..
 git clone https://github.com/mstroh76/Sensors-WiringPi.git
-cd Sensors-WiringPi/DHT
-g++ -o DHT main.cpp DHT.cpp -lwiringPi
-cd ../HC-SR04
-g++ -o HC-SR04 main.cpp HC-SR04.cpp -lwiringPi
-
-cd ~/Projekte
-wget https://goo.gl/isrNeJ
+wget --trust-server-names https://goo.gl/isrNeJ
 git clone https://github.com/chirndler/wiringpi.net.sensors.git
-cd wiringpi.net.sensors
-xbuild /p:Configuration=Release wiringpi.net.sensors.sln
-
-cd ~/Projekte
 pip3 install wiringpi
 git clone https://github.com/depklyon/raspberrypi-python-tm1637.git
 cd raspberrypi-python-tm1637
-python3 setup.py install
+sudo python3 setup.py install
 cd ..
 git clone https://github.com/jdupl/dhtxx-rpi-python3.git
-cp dhtxx-rpi-python3/dhtxx.py /usr/local/lib/python3.5/dist-packages/
+sudo cp dhtxx-rpi-python3/dhtxx.py /usr/local/lib/python3.5/dist-packages/
+\end{console}
+
+
+\lstset{language=bash, caption=/etc/motd.sh, label=LEDProgram, frame=single, basicstyle=\ttfamily
+	\tiny, breakatwhitespace=false, showstringspaces=false, showtabs=false, tabsize=1 }
+\lstinputlisting{motd.sh}
+
+\begin{console}
+echo "sh /etc/motd.sh" >> /home/pi/.profile
+echo "sh /etc/motd.sh" >> /home/pi/.zprofile
 
 reboot
 \end{console}
+
+
+Folgende Shell-Scripte können später Anfängern den Verbindungsaufbau und die Erstellung der ersten Beispielprogramms erleichtern. 
+
+\begin{console} 
+	cd ~
+	mkdir scripts
+	cd scripts
+	wget --trust-server-names https://goo.gl/uwguQo 
+	wget --trust-server-names https://goo.gl/rJwTLm
+	chmod +x *.sh
+\end{console}
+
+
+%/etc/ssh/
+%	moduli
+%	ssh_config
+%	sshd_config
+%	
+%/var/Log/  (alle Dateien 0 byte)
+%	wtmp
+%	lastlog
+%	failllog
+%	dkpg.log
+%	btmp
+%	bootstrap.log
+%	alternatives.log
+%	samba/
+%	apt/
+%		eipp.log.xz
+%		history.log
+%		term.log
+
+%\begin{console} 
+%	sudo fdisk -l /dev/mmcblk0
+%\end{console}
+
+%\begin{screensmall} 
+%Units: sectors of 1 * 512 = 512 bytes
+%Sector size (logical/physical): 512 bytes / 512 bytes
+%I/O size (minimum/optimal): 512 bytes / 512 bytes
+%Disklabel type: dos
+%Disk identifier: 0xa8fe70f4
+%
+%Device         Boot Start     End Sectors  Size Id Type
+%/dev/mmcblk0p1       8192   93802   85611 41,8M  c W95 FAT32 (LBA)
+%/dev/mmcblk0p2      98304 3629055 3530752  1,7G 83 Linux
+%\end{screensmall}
+
+\section{Image erzeugen}
+
+%https://github.com/RPi-Distro/pi-gen 
+
+\begin{console} 
+	mkdir boot rootfs
+	sudo mount /dev/mmcblk0p1 boot
+	sudo mount /dev/mmcblk0p2 rootfs
+	vi boot/cmdline.txt 	
+\end{console} 
+	
+Am Ende der ersten Zeile in der Datei cmdline.txt muss der Text\\ \textbf{init=/usr/lib/raspi-config/init\_resize.sh} \\
+eingefügt werden.
+
+	
+\begin{console} 
+	touch boot/ssh
+	rm rootfs/etc/ssh/ssh_host_*
+	cd rootfs/etc/systemd/system/multi-user.target.wants
+	sudo ln -s /lib/systemd/system/regenerate_ssh_host_keys.service regenerate_ssh_host_keys.service
+\end{console} 
+
+\begin{console} 
+	sudo umount /dev/mmcblk0p1 /dev/mmcblk0p2
+	sudo dd if=/dev/mmcblk0 of=Raspjamming-April-2018.img bs=512
+	7z a -t7z -mx5 Raspjamming-April-2018.img.zip Raspjamming-April-2018.img
+\end{console} 
+
+
+
+

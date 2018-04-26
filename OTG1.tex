@@ -1,6 +1,6 @@
 
 Beim USB-Gadget oder OTG-Betrieb kann die Raspberry Pi Zero direkt über den Micro-USB-Anschluss mit einem PC oder Laptop verbunden werden. Er verhält sich dann wie ein USB-Gerät und kann z.~B. ein Massenspeicher-, Serielles-  oder Netzwerkgerät simulieren.\\
-Verhält er sich als Netzwerkgerät kann eine Netzwerkverbindung über ein virtuelles Netzwerk zum Gerät hergestellt werden. 
+Verhält er sich als Netzwerkgerät, kann eine Netzwerkverbindung über ein virtuelles Netzwerk zum Gerät hergestellt werden. 
 Weitere Informationen über den OTG-Betrieb kann der Git-Hub Seite  \url{https://gist.github.com/gbaman/50b6cca61dd1c3f88f41} entnommen werden.
 
 \subsection{Client - Raspberry Pi Zero}
@@ -12,7 +12,7 @@ Folgender Text muss nach der Anweisung "`rootwait"' in die Datei "`cmdline.txt"'
 modules-load=dwc2,g_ether g_ether.host_addr=00:01:02:03:04:05 g_ether.dev_addr=00:01:02:03:04:06
 \end{screensmall}
 
-Die Angabe der MAC-Adresse für Host und Gerät ist optional, es wird aber empfohlen da sonst diese Adressen zufällig vergeben werden. Die Werte können frei gewählt werden, sollten sich aber nicht mit den Adressen im Netz bzw. Host überschneiden.\\
+Die Angabe der MAC-Adresse für Host und Gerät ist optional, es wird aber empfohlen, da sonst diese Adressen zufällig vergeben werden. Die Werte können frei gewählt werden, sollten sich aber nicht mit den Adressen im Netz bzw. Host überschneiden.\\
 
 Folgende Zeile muss am Ende in die Datei "`config.txt"' hinzugefügt werden:
 \begin{screensmall} 
