@@ -46,7 +46,6 @@ echo "sh /etc/motd.sh" >> /home/pi/.zprofile
 reboot
 \end{console}
 
-
 Folgende Shell-Scripte können später Anfängern den Verbindungsaufbau und die Erstellung der ersten Beispielprogramms erleichtern. 
 
 \begin{console} 
@@ -58,11 +57,49 @@ Folgende Shell-Scripte können später Anfängern den Verbindungsaufbau und die Ers
 	chmod +x *.sh
 \end{console}
 
+Folgende Shell-Scripte können später Anfängern den Verbindungsaufbau und die Erstellung der ersten Beispielprogramms erleichtern.\\
 
+Folgende Anweisungen sorgen dafür, dass beim ersten Boot die root-Partition auf die maximale Kapazität der SD-Karte vergrößert wird.   
+
+\begin{console} 
+	sudo wget -O /etc/init.d/resize2fs_once https://github.com/RPi-Distro/pi-gen/raw/dev/stage2/01-sys-tweaks/files/resize2fs_once
+	sudo chmod +x /etc/init.d/resize2fs_once
+	sudo systemctl enable resize2fs_once
+
+	sudo vi /boot/cmdline.txt 	
+\end{console} 
+
+Am Ende der ersten Zeile in der Datei cmdline.txt muss der Text\\ \textbf{init=/usr/lib/raspi-config/init\_resize.sh} \\
+eingefügt werden.
+
+Folgende Anweisungen sorgen dafür, dass beim ersten Boot ein neuer eigener SSH-Key erzeugt wird.   
+
+\begin{console} 
+	sudo touch /boot/ssh
+	sudo rm /etc/ssh/ssh_host_*
+	cd /etc/systemd/system/multi-user.target.wants
+	sudo ln -s /lib/systemd/system/regenerate_ssh_host_keys.service regenerate_ssh_host_keys.service
+\end{console} 
 %/etc/ssh/
 %	moduli
 %	ssh_config
 %	sshd_config
+
+% fill with zero
+% dd if=/dev/zero of=dummy 
+% rm dummy
+
+Folgende Anweisungen setzen Protokollierdaten zurück.   
+
+\begin{console} 
+	sudo -i
+	cd /var/log
+	> auth.log; > daemon.log; > kern.log
+	> messages; > wtmp; > debug
+	> syslog; > lastlog; > faillog
+	history -c
+\end{console} 
+
 %	
 %/var/Log/  (alle Dateien 0 byte)
 %	wtmp
@@ -77,6 +114,11 @@ Folgende Shell-Scripte können später Anfängern den Verbindungsaufbau und die Ers
 %		eipp.log.xz
 %		history.log
 %		term.log
+
+\begin{console} 
+	sudo halt
+\end{console} 
+
 
 %\begin{console} 
 %	sudo fdisk -l /dev/mmcblk0
@@ -96,30 +138,12 @@ Folgende Shell-Scripte können später Anfängern den Verbindungsaufbau und die Ers
 
 \section{Image erzeugen}
 
-%https://github.com/RPi-Distro/pi-gen 
-
-\begin{console} 
-	mkdir boot rootfs
-	sudo mount /dev/mmcblk0p1 boot
-	sudo mount /dev/mmcblk0p2 rootfs
-	vi boot/cmdline.txt 	
-\end{console} 
-	
-Am Ende der ersten Zeile in der Datei cmdline.txt muss der Text\\ \textbf{init=/usr/lib/raspi-config/init\_resize.sh} \\
-eingefügt werden.
-
-	
-\begin{console} 
-	touch boot/ssh
-	rm rootfs/etc/ssh/ssh_host_*
-	cd rootfs/etc/systemd/system/multi-user.target.wants
-	sudo ln -s /lib/systemd/system/regenerate_ssh_host_keys.service regenerate_ssh_host_keys.service
-\end{console} 
+%https://github.com/RPi-Distro/pi-gen 	
 
 \begin{console} 
 	sudo umount /dev/mmcblk0p1 /dev/mmcblk0p2
 	sudo dd if=/dev/mmcblk0 of=Raspjamming-April-2018.img bs=512
-	7z a -t7z -mx5 Raspjamming-April-2018.img.zip Raspjamming-April-2018.img
+	7z a -t7z -mx5 Raspjamming-April-2018.img.7z Raspjamming-April-2018.img
 \end{console} 
 
 
