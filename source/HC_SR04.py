@@ -14,9 +14,10 @@ while True:
 
 # ... Or print distance on 7-segment display
 from tm1637 import TM1637
-tm = TM1637(clk = 10, dio = 9)
-tm.brightness(3)
+tm = TM1637(clk = 23, dio = 24)
+tm.brightness(5)
 while True:
   dist = str(round(ds.distance*100))
+  print(str(round(ds.distance*100)) + ' cm')
   tm.write(tm.encode_string(' '*(4-len(dist))+dist))
   sleep(1)
