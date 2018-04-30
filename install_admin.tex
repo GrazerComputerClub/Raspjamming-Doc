@@ -62,7 +62,8 @@ Folgende Shell-Scripte können später Anfängern den Verbindungsaufbau und die Ers
 Folgende Anweisungen sorgen dafür, dass beim ersten Boot die root-Partition auf die maximale Kapazität der SD-Karte vergrößert wird.   
 
 \begin{console} 
-	sudo wget -O /etc/init.d/resize2fs_once https://github.com/RPi-Distro/pi-gen/raw/dev/stage2/01-sys-tweaks/files/resize2fs_once
+	sudo wget -O /etc/init.d/resize2fs_once \
+	 https://github.com/RPi-Distro/pi-gen/raw/dev/stage2/01-sys-tweaks/files/resize2fs_once
 	sudo chmod +x /etc/init.d/resize2fs_once
 	sudo systemctl enable resize2fs_once
 
@@ -72,7 +73,7 @@ Folgende Anweisungen sorgen dafür, dass beim ersten Boot die root-Partition auf 
 Am Ende der ersten Zeile in der Datei cmdline.txt muss der Text\\ \textbf{init=/usr/lib/raspi-config/init\_resize.sh} \\
 eingefügt werden.
 
-Folgende Anweisungen sorgen dafür, dass beim ersten Boot ein neuer eigener SSH-Key erzeugt wird.   
+Folgende Anweisungen sorgen dafür, dass beim ersten Boot ein neuer SSH-Key erzeugt wird.   
 
 \begin{console} 
 	sudo touch /boot/ssh
@@ -85,11 +86,8 @@ Folgende Anweisungen sorgen dafür, dass beim ersten Boot ein neuer eigener SSH-K
 %	ssh_config
 %	sshd_config
 
-% fill with zero
-% dd if=/dev/zero of=dummy 
-% rm dummy
 
-Folgende Anweisungen setzen Protokollierdaten zurück.   
+Folgende Anweisungen setzen Protokollierdateien zurück.   
 
 \begin{console} 
 	sudo -i
@@ -99,6 +97,11 @@ Folgende Anweisungen setzen Protokollierdaten zurück.
 	> syslog; > lastlog; > faillog
 	history -c
 \end{console} 
+
+% fill free space with zero
+% dd if=/dev/zero of=dummy 
+% rm dummy
+
 
 %	
 %/var/Log/  (alle Dateien 0 byte)
@@ -138,7 +141,7 @@ Folgende Anweisungen setzen Protokollierdaten zurück.
 
 \section{Image erzeugen}
 
-%https://github.com/RPi-Distro/pi-gen 	
+%Alternative: https://github.com/RPi-Distro/pi-gen 	
 
 \begin{console} 
 	sudo umount /dev/mmcblk0p1 /dev/mmcblk0p2
