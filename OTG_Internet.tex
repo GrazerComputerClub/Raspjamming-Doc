@@ -1,7 +1,7 @@
 %\subsection{Internet Zugriff} 
 ~\\
-Nach der Einrichtung des Netzwerk kann der Raspberry Pi Zero mit dem Namen "`raspberrypi.local"' erreicht werden. Um den Raspbery Pi Zero mit dem Internet verbinden zu können müssen einige Einstellungen am Host %und Client
- gemacht werden. Man muss den Name des Netzwerkgeräts am Host-PC kennen, das mit dem Internet verbunden ist. Dies ermittelt man über die Netzwerkeinstellungen oder über die Konsole mit nmcli. Im Beispielfall ist der Name "`enp0s25"' das richtige Gerät.
+Nach der Einrichtung des Netzwerks kann der Raspberry Pi Zero mit dem Namen "`raspberrypi.local"' erreicht werden. Um den Raspbery Pi Zero mit dem Internet verbinden zu können, müssen einige Einstellungen am Host %und Client
+ gemacht werden. Man muss den Namen des Netzwerkgeräts am Host-PC kennen, das mit dem Internet verbunden ist. Dies ermittelt man über die Netzwerkeinstellungen oder über den Terminal mit nmcli. Im Beispielfall ist der Name "`enp0s25"' das richtige Gerät.
 
 \begin{console} 
 	nmcli d
@@ -14,7 +14,7 @@ Nach der Einrichtung des Netzwerk kann der Raspberry Pi Zero mit dem Namen "`ras
 	lo               loopback  nicht verwaltet  --  
 \end{screensmall}
 
-Damit der Internetzugang für den Raspberry Pi Zero freigegeben wird, müssen am Host-PC folgende Befehle in einem Terminal eingeben werden. "`enp0s25"' muss durch den Namen des Netzwerkgeräts ersetzt werden, das mit dem Internet verbunden ist.
+Damit der Internetzugang für den Raspberry Pi Zero freigegeben wird, müssen am Host-PC folgende Befehle im Terminal eingeben werden. "`enp0s25"' muss durch den Namen des Netzwerkgeräts ersetzt werden, das mit dem Internet verbunden ist.
 
 \begin{console} 
 	sudo sysctl -w net.ipv4.ip_forward=1

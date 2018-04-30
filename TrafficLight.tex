@@ -15,30 +15,26 @@
 
 \ExerciseBox{
 Bilde die Standardfunktion einer österreichischen Ampel nach [Beispiele]\\
-Schalte über einen Eingang auf Rot für den Fußgängerübergang}
+Schalte über einen Eingang auf Rot für den Fußgängerübergang\\
+Überwache die CPU-Last und schalte bei über 90 \% auf Rot und über 50 \% auf Gelb}
 
-%\begin{exercise}
-%	Bilde die Standardfunktion einer Ampel nach [Beispiele]\\
-%	Schalte über einen Eingang sofort auf Rot für Fußgänger 
-%\end{exercise}
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[scale=0.05]{images/Ampel_Rot.png}	
-	\includegraphics[scale=0.05]{images/Ampel_RotGelb.png}
-	\includegraphics[scale=0.05]{images/Ampel_Gruen.png}
-	\includegraphics[scale=0.05]{images/Ampel_Aus.png}
-	\includegraphics[scale=0.05]{images/Ampel_Gruen.png}
-	\includegraphics[scale=0.05]{images/Ampel_Aus.png}
-	\includegraphics[scale=0.05]{images/Ampel_Gruen.png}
-	\includegraphics[scale=0.05]{images/Ampel_Aus.png}
-	\includegraphics[scale=0.05]{images/Ampel_Gruen.png}
-	\includegraphics[scale=0.05]{images/Ampel_Gelb.png}
+	\includegraphics[scale=0.04]{images/Ampel_Rot.png}	
+	\includegraphics[scale=0.04]{images/Ampel_RotGelb.png}
+	\includegraphics[scale=0.04]{images/Ampel_Gruen.png}
+	\includegraphics[scale=0.04]{images/Ampel_Aus.png}
+	\includegraphics[scale=0.04]{images/Ampel_Gruen.png}
+	\includegraphics[scale=0.04]{images/Ampel_Aus.png}
+	\includegraphics[scale=0.04]{images/Ampel_Gruen.png}
+	\includegraphics[scale=0.04]{images/Ampel_Aus.png}
+	\includegraphics[scale=0.04]{images/Ampel_Gruen.png}
+	\includegraphics[scale=0.04]{images/Ampel_Gelb.png}
 	%	\caption{}
 	\label{Ampel_Ablauf}
 \end{figure}
 
-%\subsection{Shell}
 
 \subsection{C}
 
@@ -46,15 +42,15 @@ Schalte über einen Eingang auf Rot für den Fußgängerübergang}
 	geany &
 \end{console}
 
-Nun kann man ein neues Projekt erstellen, dazu wählt man \texttt{Projekt} $\rightarrow$ \texttt{Neu...}. Dann Gibt man den Namen des Projekts an. Das Anlegen der Verzeichnisse muss man auch noch bestätigen. 
-
+Zuerst wird ein neues Projekt erstellt. Dazu wählt man im Menü  \texttt{Projekt} $\rightarrow$ \texttt{Neu...}. Dann gibt man den Namen des Projekts an z.~B. TrafficLight. Das Anlegen der Verzeichnisse muss danach auch noch bestätigt werden.
+Weitere Einstellungen wie Zeichen für Einrückungen und Zeilenumbruch können unter \texttt{Projekt} $\rightarrow$ \texttt{Eigenschaften} vorgenommen werden.\\
 Danach wählt man \texttt{Datei} $\rightarrow$ \texttt{Speichern unter} um die unbenannte Datei mit dem Namen "`TrafficLight.c"' speichern zu können. Nun kann man den folgenden C-Source eingeben.
 
 \lstset{language=C, caption=, label=TrafficLightProgram, frame=single, basicstyle=\ttfamily
 	\footnotesize, breakatwhitespace=false, showstringspaces=false, showtabs=false, tabsize=2 }
 \lstinputlisting{source/TrafficLight.c}
 
-Jetzt darf man nicht vergessen im Menü unter \texttt{Erstellen} $\rightarrow$ \texttt{Kommandos zum Erstellen konfigurieren} die Wiring Pi Library mit "`-lwiringPi"' bei Compile und Build zu ergänzen.
+Im Menü unter \texttt{Erstellen} $\rightarrow$ \texttt{Kommandos zum Erstellen konfigurieren} die WiringPi Library mit "`\textit{-lwiringPi}"' bei \texttt{Compile} und \texttt{Build} zu ergänzen.
 
 \begin{figure}[ht]
 	\centering
@@ -63,7 +59,7 @@ Jetzt darf man nicht vergessen im Menü unter \texttt{Erstellen} $\rightarrow$ \t
 	\label{Geany-create}
 \end{figure}
 
-Nun kann man das Projekt mit den Ziegel-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Erstellen.png} erstellen bzw. kompilieren und danach mit dem Zahnrad-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Ausfuehren.png}  ausführen.  
+Nun kann man das Projekt mit den Ziegel-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Erstellen.png} erstellen bzw. kompilieren und danach mit dem Zahnrad-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Ausfuehren.png} ausführen.  
 
 %\clearpage
 \subsection{C\#}
@@ -72,7 +68,7 @@ Nun kann man das Projekt mit den Ziegel-Icon \includegraphics[scale=0.4]{images/
 	geany &
 \end{console}
 
-Nun kann man ein neues Projekt erstellen. Dazu wählt man \texttt{Projekt} $\rightarrow$ \texttt{Neu...}. Dann gibt man den Namen des Projekts an, z.~B. Raspjamming. Das Anlegen der Verzeichnisse muss danach auch noch bestätigt werden. Nachfolgend unter \texttt{Datei} $\rightarrow$ \texttt{Speichern unter} die unbenannte Datei mit dem Namen "`TrafficLight.cs"' speichern. Nun kann man den folgenden C\#-Source eingeben.\\
+Zuerst wird ein neues Projekt erstellt. Dazu wählt man im Menü \texttt{Projekt} $\rightarrow$ \texttt{Neu...}. Dann gibt man den Namen des Projekts an, z.~B. csTrafficLight. Das Anlegen der Verzeichnisse muss danach auch noch bestätigt werden. Nachfolgend unter \texttt{Datei} $\rightarrow$ \texttt{Speichern unter} die unbenannte Datei mit dem Namen "`TrafficLight.cs"' speichern. Nun kann man den folgenden C\#-Source eingeben.\\
 
 \lstset{language=C, caption=, label=TrafficLightProgramCS, frame=single, basicstyle=\ttfamily
 	\footnotesize, breakatwhitespace=false, showstringspaces=false, showtabs=false, tabsize=2 }
@@ -80,8 +76,8 @@ Nun kann man ein neues Projekt erstellen. Dazu wählt man \texttt{Projekt} $\righ
 
 Um das Programm kompilieren zu können, muss im Menü unter \texttt{Erstellen}
 $\rightarrow$ \texttt{Kommandos zum Erstellen konfigurieren} der Pfad zur Sourcedatei des C\# WiringPi 
-Wrapper (siehe \ref{WiringPiCS}) hinzugefügt werden. Hierfür im Textfeld 'Kompilieren' den Pfad z.~B. WiringPi.cs ergänzen.\\
-\texttt{mcs /t:winexe \textquotedblleft\%f\textquotedblright} \textbf{WiringPi.cs} \texttt{/r:System,System.Drawing}\\
+Wrapper (siehe \ref{WiringPiCS}) hinzugefügt werden. Hierfür im Textfeld \texttt{Kompilieren} den Pfad z.~B. WiringPi.cs ergänzen.\\
+"`\textit{mcs /t:winexe \textquotedblleft\%f\textquotedblright WiringPi.cs /r:System,System.Drawing}"'.\\
 
 \begin{figure}[ht]
 	\centering
@@ -90,15 +86,19 @@ Wrapper (siehe \ref{WiringPiCS}) hinzugefügt werden. Hierfür im Textfeld 'Kompil
 	\label{Geany-setpy3}
 \end{figure}
 
+Es muss die WiringPi Wrapper Datei in das Projektverzeichnis kopiert werden. 
+
+\begin{console}
+	cp ~/Projekte/WiringPi.cs ~/Projekte/csTrafficLight/
+\end{console}
+
 Anschließend kann man das Programm mit dem Kompilieren-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Kompilieren.png} erstellen bzw. kompilieren und mit dem Zahnrad-Icon \includegraphics[scale=0.4]{images/Geany_Icon_Ausfuehren.png} ausführen.
 Das Programm kann mit der Tastenkombination \framebox{Strg}+\framebox{C} vorzeitig beendet werden.
 
 %\clearpage
 \subsection{Python}
-Um das Python Programm auszuführen muss man eine neue Datei anlegen und 
-unter \texttt{Datei} $\rightarrow$ \texttt{Speichern unter} die
-Datei mit dem Namen "`TrafficLight.py"' abspeichern. Anschließend kann man
-folgenden Python-Source einfügen:
+
+Zuerst wird ein neues Projekt erstellt. Dazu wählt man \texttt{Projekt} $\rightarrow$ \texttt{Neu...}. Dann gibt man den Namen des Projekts an, z.~B. pyTrafficLight. Das Anlegen der Verzeichnisse muss danach auch noch bestätigt werden. Nachfolgend unter \texttt{Datei} $\rightarrow$ \texttt{Speichern unter} die unbenannte Datei mit dem Namen "`TrafficLight.py"' speichern. Nun kann man den folgenden Python-Source eingeben.\\
 
 \lstset{language=Python, caption=, 
         label=LEDProgram, frame=single, basicstyle=\ttfamily

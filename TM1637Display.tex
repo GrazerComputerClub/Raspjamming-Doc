@@ -18,7 +18,8 @@
 \ExerciseBox{
 Gib Zahlen und Texte aus [Beispiele]\\
 Gib die aktuelle CPU Temperatur aus [Beispiel Python]\\
-Gib die gemittelte aktuelle CPU Last in Prozent aus}
+Gib die gemittelte aktuelle CPU Last in Prozent aus\\
+Realisiere eine Laufschrift}
 
 %https://www.mpja.com/download/31227sc.pdf
 
@@ -27,6 +28,8 @@ Gib die gemittelte aktuelle CPU Last in Prozent aus}
 \begin{console}
 	git clone https://github.com/mstroh76/TM1637Display
 	cd TM1637Display
+	g++ -o TM1637Display *.cpp -lwiringPi
+	./TM1637Display
 	geany project.geany & 
 \end{console}
 
@@ -40,13 +43,11 @@ Gib die gemittelte aktuelle CPU Last in Prozent aus}
 	sudo mono wiringpi.net.sensors.sample.exe 3
 \end{console}
 
+\clearpage
 \textbf{Python:}
-%git clone https://github.com/depklyon/raspberrypi-python-tm1637.git
-% orig link zu: https://goo.gl/KU1Jm2
 \begin{console}
-	sudo apt-get install python3-pip
 	sudo pip3 install wiringpi
-	git clone https://goo.gl/KU1Jm2
+	git clone https://github.com/depklyon/raspberrypi-python-tm1637.git
 	cd raspberrypi-python-tm1637
 	sudo python3 setup.py install
 \end{console}
@@ -56,3 +57,7 @@ Gib die gemittelte aktuelle CPU Last in Prozent aus}
 	      \footnotesize, breakatwhitespace=false, showstringspaces=false, 
         showtabs=false, tabsize=2 }
 \lstinputlisting{source/TM1637_Temp.py}
+
+\begin{console}
+	python3 TM1637_Temp.py
+\end{console}

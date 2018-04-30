@@ -1,8 +1,8 @@
-\subsection{wiringPi C-Bibliothek / gpio Tool}
+\subsection{wiringPi C-Bibliothek / gpio Kommandozeilenprogramm}
 \label{wiringPi}
 
-WiringPi ist eine C-Bibliothek für den Zugriff auf Funktionen der GPIOs des Prozessors der Raspberry Pi. Sie wird unter der GNU LGPLv3 Lizenz angeboten.\\
-Die Bibliothek enthält auch das Kommandozeilen Tool "`gpio"'. Es kann genutzt werden, um von der Konsole oder einem Shell-Skript aus auf die GPIOs zugreifen zu können. Standardmäßig wird eine eigene WiringPi-Nummerierung für die Pins verwendet. Wenn man allerdings den Parameter  "`-g"' hinzufügt, werden die BCM-Nummern verwendet. Früher musste das Programm mit root-Rechten bzw. über sudo gestartet werden. Dies ist inzwischen nicht mehr nötig. Mit dem Befehl "`gpio readall"' kann der aktuelle Status der GPIOs ausgegeben werden. 
+WiringPi ist eine C-Bibliothek für den Zugriff auf Funktionen der GPIOs des Prozessors des Raspberry Pi's. Sie wird unter der GNU LGPLv3 Lizenz angeboten.\\
+Die Bibliothek enthält auch das Kommandozeilenprogramm "`gpio"'. Es kann genutzt werden, um von der Konsole oder einem Shell-Skript aus auf die GPIOs zugreifen zu können. Standardmäßig wird eine eigene WiringPi-Nummerierung für die Pins verwendet. Wenn man allerdings den Parameter  "`-g"' hinzufügt, werden die BCM-Nummern verwendet. Früher musste das Programm mit root-Rechten bzw. über sudo gestartet werden. Dies ist inzwischen nicht mehr nötig. Mit dem Befehl "`gpio readall"' kann der aktuelle Status der GPIOs ausgegeben werden. 
 
 \begin{console}
 	gpio -v

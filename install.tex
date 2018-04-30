@@ -1,13 +1,15 @@
+Folgende Programme sind auf dem vorbereiteten Image bereits installiert. Demnach müssen die angeführten Anweisungen nur bei einem Raspbian Image ausgeführt werden. Auf die größeren Programme \textit{CodeLite} und \textit{Code::Blocks} wurde allerdings beim vorinstallierten Image verzichtet, da bei der Anleitung Geany verwendet wird. 
 
 %\textbf{Raspberry Pi:}
 \begin{console}
 sudo apt-get update
 sudo apt-get -y upgrade
-sudo apt-get install codelite geany vim wiringpi pigpio git build-essential automake
+sudo apt-get install geany vim wiringpi pigpio git build-essential automake
 sudo apt-get install minicom screen
 sudo apt-get install python-dev python-openssl rpi.gpio
-sudo apt-get install python3-dev python3-openssl python3-rpi.gpio python3-gpiozero
+sudo apt-get install python3-dev python3-openssl python3-rpi.gpio python3-gpiozero python3-pip
 sudo apt-get install mono-complete
+sudo apt-get install codelite codeblocks
 sudo apt-get clean
 sudo reboot
 \end{console}
@@ -15,26 +17,9 @@ sudo reboot
 
 Die Abkürzung \textit{IDE} bezeichnet eine integrierte Entwicklungsumgebung (Integrated Development Environment). Sie stellt umfassende Funktionen und Programme zur Entwicklung von Programmen bereit. Die Hauptkomponenten sind Editor, Compiler und Debugger.\\  
 Eine Versionsverwaltung ist ein System, das zur Verwaltung, Archivierung und Erfassung von Änderungen an Source-Dateien verwendet wird. GitHub ist ein webbasierter Online-Dienst zur Versionsverwaltung, der viele Software-Entwicklungsprojekte bereitstellt.\\
-
-\textit{CodeLite} ist eine freie plattformübergreifende IDE, die auf die Programmiersprachen C, C++, PHP und JavaScript (Node.js) spezialisiert ist. \textit{Geany} ist ein Texteditor mit grundlegenden Funktionen. Es wurde entwickelt, um eine kleine und schnelle IDE bereitzustellen. Nachteil gegenüber \textit{CodeLite} ist vor allem das Fehlen eines Debuggers und Probleme bei multiplen Projektdateien. Programmfehler werden nicht hervorgehoben oder markiert. Für die einfachen Beispiele in dieser Anleitung ist es aber gut geeignet. Das Programm unterstützt alle wichtigen Entwicklungsumgebungen wie C, C++, C\# und Python. \\
-\textit{WiringPi} und \textit{pigpio} sind zwei C-Bibliotheken die das Arbeiten mit den GPIOs der Raspberry Pi ermöglichen. Sie sind nicht kompatibel, man muss sich also für eine entscheiden. In der Anleitung wird ausschließlich die \textit{WiringPi} Bibliothek benutzt. \textit{git} ist ein Versionsverwaltungsystem das Zugriff auf Source-Dateien von Projekte ermöglicht. Diese werden zumeist auf Online-Dienst GitHub zur Verfügung gestellt. Das Paket \textit{build-essential} enthält GNU C und C++ Compiler sowie die GNU-C-Bibliothek um C/C++-Projekte kompilieren bzw. erstellen zu können.\\ 
-\textit{minicom} und \textit{screen} sind Programme um auf der seriellen Schnittstelle (UART) der Raspberry Pi kommunizieren zu können.\\
-\textit{python-dev} enthält Bibliothek und Entwicklungswerkzeuge zum Erstellen von Python-Scripte, sowie den Python-Interpreter selbst. \textit{rpi.gpio} ist eine Python Bibliothek die Basisfunktionalitäten der GPIOs unterstützt. \textit{gpiozero} ist eine aktuelle Python Bibliothek die viele Funktionen der GPIOs zur Verfügung stellt und von er Raspberry Pi Foundation empfohlen wird. Bei den Beispielen wird ausschließlich diese Library verwendet.\\
-\textit{mono-complete} enthält Compiler, Librarys und die Runtimeumgebung um CIL (Common Intermediate Language) Bytecode auch als Assemblies bekannt erzeugen und ausführen zu können. 
-
-%edublicks!
-
-%blockly
-% apt-get installl chromium-browser
-%cd  ~
-%git clone https://github.com/karstenda/BlocklyPi.git
-%cd BlocklyPi
-%sudo python server.py
-% open http://raspberrypi.local:8080
-
-%cd  ~
-%git clone https://github.com/carlosperate/Blockly-gPIo
-%cd Blockly-gPIo
-%sudo python run.py
-% open not! http://raspberrypi.local:8000
-% open https://www.embeddedlog.com/Blockly-gPIo/public/
+\textit{CodeLite} ist eine freie plattformübergreifende IDE, die auf die Programmiersprachen C, C++, PHP und JavaScript (Node.js) spezialisiert ist. \textit{Code::Blocks} ist eine freie plattformübergreifende IDE für die Programmiersprachen C, C++ und Fortran.\\
+\textit{Geany} ist ein Texteditor mit grundlegenden Funktionen. Es wurde entwickelt, um eine kleine und schnelle IDE bereitzustellen. Nachteil gegenüber einer IDE wie \textit{CodeLite} ist vor allem das Fehlen eines Debuggers und Probleme bei multiplen Projektdateien. Der Benutzer muss sich darum kümmern, dass die Kompileranweisung alle Sourcecode Komponenten einschließt. Kompilierfehler werden im Source nicht hervorgehoben, sondern nur in einem Fester ausgegeben. Für die einfachen Beispiele in dieser Anleitung ist es aber gut geeignet. Das Programm unterstützt alle wichtigen Entwicklungsumgebungen wie C, C++, C\# und Python.\\
+\textit{WiringPi} und \textit{pigpio} sind zwei C-Bibliotheken, die das Arbeiten mit den GPIOs der Raspberry Pi ermöglichen. Sie sind nicht kompatibel, man muss sich also für eine entscheiden. In der Anleitung wird ausschließlich die \textit{WiringPi} Bibliothek benutzt. \textit{git} ist ein Versionsverwaltungsystem das Zugriff auf Source-Dateien von Projekte ermöglicht. Diese werden zumeist auf Online-Dienst GitHub zur Verfügung gestellt. Das Paket \textit{build-essential} enthält GNU C und C++ Compiler sowie die GNU-C-Bibliothek um C/C++-Projekte kompilieren bzw. erstellen zu können.\\ 
+\textit{minicom} und \textit{screen} sind Programme, um auf der seriellen Schnittstelle (UART) der Raspberry Pi kommunizieren zu können.\\
+\textit{python-dev} bzw. \textit{python3-dev} enthält Bibliothek und Entwicklungswerkzeuge zum Erstellen von Python-Scripte, sowie den Python-Interpreter selbst. In der Anleitung wird ausschließlich die aktuelle Version 3 von Python verwendet. \textit{rpi.gpio} ist eine Python Bibliothek die Basisfunktionalitäten der GPIOs unterstützt. \textit{gpiozero} ist eine aktuelle Python Bibliothek die viele Funktionen der GPIOs zur Verfügung stellt und von der Raspberry Pi Foundation empfohlen wird. Bei den Beispielen wird ausschließlich diese Library verwendet.\\
+\textit{mono-complete} enthält Compiler, Librarys und die Runtimeumgebung um CIL (Common Intermediate Language) Bytecode, auch als Assemblies bekannt, erzeugen und ausführen zu können. Es wird für die Erstellung von C\# Programmen benötigt.

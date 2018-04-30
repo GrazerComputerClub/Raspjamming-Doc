@@ -8,7 +8,6 @@ namespace Raspjamming
 		const int Red = 16;
 		const int Yellow = 20;
 		const int Green = 21;
-
 		private static volatile bool _end = false;
 
 		static void Console_CancelKeyPress(object sender, ConsoleCancelEventArgs e)
