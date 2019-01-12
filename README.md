@@ -3,9 +3,9 @@
 
 ## Preview
 
-[![Raspjamming Homepage Preview JPG](https://mstroh76.github.io/Raspjamming/img/preview.jpg)](https://mstroh76.github.io/Raspjamming/)
+[![Raspjamming Homepage Preview JPG](https://GrazerComputerClub.github.io/Raspjamming/img/preview.jpg)](https://GrazerComputerClub.github.io/Raspjamming/)
 
 
 ## Copyright and License
 
-Code released under the [MIT](https://mstroh76.github.io/Raspjamming/LICENSE) license.
+Code released under the [MIT](https://GrazerComputerClub.github.io/Raspjamming/LICENSE) license.
