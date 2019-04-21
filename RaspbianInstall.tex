@@ -1,11 +1,12 @@
 
-Raspbian ist das offizielle Betriebssystem für den Raspberry~Pi. Es kann in zwei unterschiedlichen Varianten heruntergeladen werden. Man kann zwischen einer minimalen Version (Lite) oder einer Version mit grafischer Oberfläche und vielen vorinstallierten Programmen wählen. Es wird in beiden Fällen mindestens eine 4~GB große MicroSD-Karte benötigt. Man sollte aber, um Reserven zu haben, mindesten 8~GB verwenden.\\  
-Zur Installation benötigt man ein beliebiges Linux System mit einem MicroSD-Kartenlesegerät. Die aktuelle Raspbian Version kann als Image-Datei von der Seite \url{https://www.raspberrypi.org/downloads/raspbian/} heruntergeladen werden. Bei dieser Anleitung wird Raspbian Stretch Lite verwendet.
+Raspbian ist das offizielle Betriebssystem für den Raspberry~Pi. Für die Verwendung bei einem Raspberry Pi Jam wurde ein eigenen Image vom Grazer Computer Club (GC2) mit dem Namen Raspjamming erstellt und zur Verfügung gestellt. Ausgehend vom 
+Raspbian Lite Image wurde noch verschiedene Entwickerlerprogramm und Werkzeuge installiert. Zusätzlich wurde das System so eingerichtet, dass die Raspberry Pi Zero direkt über den USB-OTG Anschluss mit dem Host PC verbunden werden kann. Der SSH-Dienst und WLAN wurde aktiviert. Alle Ländereinstellung wurden  von UK auf Österreich/German geändert. Ein Web-Server stellt Programme und Hilfe zur Verfügung, auch ohne Internet..\\  
+Für die Installation benötigt man ein beliebiges Linux System mit einem MicroSD-Kartenlesegerät.  Es wird mindestens eine 4~GB große MicroSD-Karte benötigt. Die aktuelle Raspjamming Version kann als Image-Datei von der Seite \url{https://github.com/GrazerComputerClub/Raspjamming-Image} heruntergeladen werden. 
 
 \begin{console}
-	wget --trust-server-names http://downloads.raspberrypi.org/raspbian_lite_latest
-	unzip 2018-03-13-raspbian-stretch-lite.zip
-	rm 2018-03-13-raspbian-stretch-lite.zip
+	wget --trust-server-names http://www.strohmayers.com/image/2019-02-07-Raspjamming-full.zip
+	unzip 2019-02-07-Raspjamming-full.zip
+	rm 2019-02-07-Raspjamming-full.zip
 \end{console}
 
 
@@ -65,11 +66,11 @@ Zu Beachten ist, dass der USB-Massenspeicher möglicherweise bereits automatisch 
 
 \begin{console}
 	umount /dev/sdb1 /dev/sdb2
-	dd if=2018-03-13-raspbian-stretch-lite.img of=/dev/sdc bs=4M
+	dd if=2019-02-07-Raspjamming-full.img of=/dev/sdc bs=4M
 \end{console}
 
 \begin{screensmall}
-	1323+0 Datensätze ein
-	1323+0 Datensätze aus
-	1387266048 Bytes (1,4 GB) kopiert, 127,6147 s, 10,4 MB/s
+	2623+0 Datensätze ein
+	2623+0 Datensätze aus
+	2387266048 Bytes (2,4 GB) kopiert, 247,6147 s, 10,4 MB/s
 \end{screensmall}

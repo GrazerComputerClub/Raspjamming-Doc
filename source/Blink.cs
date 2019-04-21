@@ -5,20 +5,20 @@ namespace Raspjamming
 
 	static class Blink
 	{
-		const int GPIO17 = 17;
+		const int LED = 16;
 
 		static int Main()
 		{
 			if (WiringPi.WiringPiSetupGpio() != -1)
 			{
 				Console.WriteLine("Raspberry Pi LED blinking example");
-				WiringPi.PinMode(GPIO17, WiringPi.Output);
+				WiringPi.PinMode(LED, WiringPi.Output);
 				for (int loop = 0; loop < 3; loop++)
 				{
-					WiringPi.DigitalWrite(GPIO17, WiringPi.High);
+					WiringPi.DigitalWrite(LED, WiringPi.High);
 					Console.WriteLine("on");
 					Thread.Sleep(500);
-					WiringPi.DigitalWrite(GPIO17, WiringPi.Low);
+					WiringPi.DigitalWrite(LED, WiringPi.Low);
 					Console.WriteLine("off");
 					Thread.Sleep(500);
 				}
