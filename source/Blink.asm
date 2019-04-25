@@ -1,7 +1,7 @@
 .data
 .balign 4 
 @ WiringPi Pin 27 == BCM GPIO 16 == Physical 36
-pin: .int 0
+pin: .int 27
 delayMs: .int 250
 
 .text

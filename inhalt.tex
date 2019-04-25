@@ -55,6 +55,16 @@ Beim Beenden des Programms muss ein Neustart (reboot) durchgeführt werden.
 
 \input{HC-SR04}
 
+\clearpage
+\section{ESP8266}
+
+\input{ESP8266}
+
+\clearpage
+\section{Atmega328}
+
+\input{Atmega328}
+
 
 \chapter*{Anhang}
 
@@ -69,6 +79,46 @@ Beim Beenden des Programms muss ein Neustart (reboot) durchgeführt werden.
   %\label{GPIORaspberryPi}
 \end{figure}
 \clearpage
+
+\subsection*{GC2-xHAT (Grazer Computer Club Raspjamming Raspberry Pi HAT)}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.19]{images/GC2-xHAT.jpg}
+  %\caption{}
+  %\label{GPIORaspberryPi}
+\end{figure}
+
+Am GC2-xHAT sind alle beschriebene Projekte bereits entsprechend der Anleitung angeschlossen. Weitere Informationen zur Hardware erhält man auf \url{https://github.com/GrazerComputerClub/GC2-xHAT}.\\ 
+Folgende Befehl sind am Raspjamming Linux verfügbar wenn der GC2xHAT aufgesteckt wurde.\\ 
+ 
+\textbf{poweron} \dots ESP8266 und ATmega328 Sockel werden mit 3.3 V versorgt\\
+\textbf{poweroff} \dots ESP8266 und ATmega328 Sockel werden nicht mehr versorgt\\
+\textbf{beep} \dots Ein kurzer Ton wird am Summer erzeugt\\
+\textbf{redon} \dots Rote LED wird eingeschaltet\\
+\textbf{redglow} \dots Rote LED wird schwach leuchtend eingeschaltet\\
+\textbf{redoff} \dots Rote LED wird ausgeschaltet\\
+\textbf{orangeon} \dots Orange LED wird schwach leuchtend eingeschaltet\\
+\textbf{orangeglow} \dots Orange LED wird schwach leuchtend eingeschaltet\\
+\textbf{orangeoff} \dots Orange LED wird ausgeschaltet\\
+\textbf{greenon} \dots Grüne LED wird ausgeschaltet\\
+\textbf{greenglow} \dots Grüne LED wird schwach leuchtend eingeschaltet\\
+\textbf{greenoff} \dots Grüne LED wird ausgeschaltet\\
+\textbf{ledon} \dots Alle LEDs werden eingeschaltet\\
+\textbf{ledoff} \dots Alle LEDs werden ausgeschaltet\\
+
+
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.60]{images/GC2-xHAT-circuit_diagram.png}
+  %\caption{}
+  %\label{GPIORaspberryPi}
+\end{figure}
+
+
+\clearpage
+
 
 \input{CC_Lizenz}
 

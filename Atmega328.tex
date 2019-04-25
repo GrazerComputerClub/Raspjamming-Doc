@@ -1,0 +1,46 @@
+\subsection{Anschluss}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.19]{images/ATmega328P_Steckplatine.png}	
+  \includegraphics[scale=0.19]{images/ATmega328P_Schaltplan.png}	
+		%	\caption{}
+  \label{ATmega328P}
+\end{figure}
+
+\subsection{Einrichtung}
+
+\begin{console}
+sudo apt-get install avrdude
+\end{console}
+
+In der Konfigurationsdatei /etc/avrdude.conf muss die SPI-Taktfrequenz von 400~kHz auf 200~kHz reduziert werden.
+
+\begin{screensmall}
+  id = "linuxspi";
+  desc = "Use Linux SPI device in /dev/spidev*";
+  type = "linuxspi";
+  reset = 25;
+  baudrate=200000;
+\end{screensmall}
+
+Danach kann mit "`avrdude"' der Chiptyp ausgelesen bzw. die Kommunikation geprüft werden.
+\begin{console}
+sudo avrdude -c linuxspi -p m328p -P /dev/spidev0.0
+\end{console}
+
+\begin{screensmall}
+avrdude: AVR device initialized and ready to accept instructions
+Reading | ################################################## | 100% 0.00s
+avrdude: Device signature = 0x1e950f (probably m328p)
+avrdude: safemode: Fuses OK (E:FF, H:D9, L:62)
+avrdude done.  Thank you.
+\end{screensmall}
+
+\subsection{Programmierung}
+
+\begin{console}
+sudo apt-get install gcc-avr avr-libc 
+\end{console}
+
+Zum Programmieren, Kompilieren und Übertragen einen Programms in den ATmega328P siehe \url{https://blog.gc2.at/post/atmega-328p/}
