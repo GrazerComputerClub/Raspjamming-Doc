@@ -18,7 +18,7 @@ int main (void) {
   struct sigaction sa;
 
   setbuf(stdout, NULL); // deactivate stdout buffering 
-  printf("Raspberry Pi LED program using GPIO%02 (press ctrl+c to quit)\n", LED);
+  printf("Raspberry Pi LED program using GPIO%02d (press ctrl+c to quit)\n", LED);
   if (wiringPiSetupGpio() == -1) { // Init with BCM GPIO numering
     perror("wiringPiSetup failed");
     exit(1);
@@ -29,7 +29,7 @@ int main (void) {
   sigaction(SIGQUIT,&sa, NULL);
   sigaction(SIGTERM,&sa, NULL);
 
-  pinMode(GPIO17, OUTPUT);
+  pinMode(LED, OUTPUT);
   printf("LED blinking...\n");
   while(!end) {
     printf(" on");
