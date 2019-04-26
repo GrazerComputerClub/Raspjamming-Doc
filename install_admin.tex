@@ -1,22 +1,20 @@
 
+%Alternative: https://github.com/RPi-Distro/pi-gen 	
+
 %\textbf{Raspberry Pi:}
 \begin{console}
 sudo -i
 apt-get update && apt-get -y upgrade
-apt-get clean
 apt-get install mono-complete
-apt-get clean
 apt-get install python-dev python-openssl rpi.gpio
-apt-get clean
 apt-get install python3-dev python3-openssl python3-rpi.gpio python3-gpiozero python3-pip
-apt-get clean
-apt-get install geany vim wiringpi pigpio git build-essential automake
-apt-get clean
-apt-get install minicom screen
-apt-get clean
-apt-get install zsh
-wget -O .zshrc https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
-chmod --shell /bin/zsh pi
+apt-get install raspi-gpio geany rxvt-unicode vim wiringpi pigpio git build-essential automake cmake
+apt-get install minicom screen avrdude esptool
+apt-get install fbi
+lighttpd
+%apt-get install zsh
+%wget -O .zshrc https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
+%chmod --shell /bin/zsh pi
 apt-get clean
 cd ~
 mkdir Projekte
@@ -57,13 +55,11 @@ Folgende Shell-Scripte können später Anfängern den Verbindungsaufbau und die Ers
 	chmod +x *.sh
 \end{console}
 
-Folgende Shell-Scripte können später Anfängern den Verbindungsaufbau und die Erstellung der ersten Beispielprogramms erleichtern.\\
-
 Folgende Anweisungen sorgen dafür, dass beim ersten Boot die root-Partition auf die maximale Kapazität der SD-Karte vergrößert wird.   
 
 \begin{console} 
 	sudo wget -O /etc/init.d/resize2fs_once \
-	 https://github.com/RPi-Distro/pi-gen/raw/dev/stage2/01-sys-tweaks/files/resize2fs_once
+   https://raw.githubusercontent.com/smarkets/chef-raspberry-pi/master/files/default/resize2fs_once
 	sudo chmod +x /etc/init.d/resize2fs_once
 	sudo systemctl enable resize2fs_once
 
@@ -95,7 +91,10 @@ Folgende Anweisungen setzen Protokollierdateien zurück.
 	> auth.log; > daemon.log; > kern.log
 	> messages; > wtmp; > debug
 	> syslog; > lastlog; > faillog
-	history -c
+  apt-get clean	
+  history -c
+  exit
+  history -c
 \end{console} 
 
 % fill free space with zero
@@ -141,12 +140,12 @@ Folgende Anweisungen setzen Protokollierdateien zurück.
 
 \section{Image erzeugen}
 
-%Alternative: https://github.com/RPi-Distro/pi-gen 	
+Hierzu muss die SD-Karte in einem anderen Linux System mit SD-Karten-Lesegerät eingesteckt werden.
 
 \begin{console} 
 	sudo umount /dev/mmcblk0p1 /dev/mmcblk0p2
-	sudo dd if=/dev/mmcblk0 of=Raspjamming-April-2018.img bs=512
-	7z a -t7z -mx5 Raspjamming-April-2018.img.7z Raspjamming-April-2018.img
+	sudo dd if=/dev/mmcblk0 of=Raspjamming-<Jahr><Monat><Tag>.img bs=512
+	7z a -t7z -mx5 Raspjamming-<Jahr><Monat><Tag>.img.7z Raspjamming-<Jahr><Monat><Tag>.img
 \end{console} 
 
 

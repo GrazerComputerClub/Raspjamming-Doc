@@ -4,7 +4,7 @@ from gpiozero import LED
 import time
 
 print("Raspberry Pi LED blinking example")
-l = LED(17)
+l = LED(16)
 while 1:
   l.on()
   print(" on");

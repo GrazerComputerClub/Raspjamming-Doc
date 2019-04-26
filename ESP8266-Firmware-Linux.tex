@@ -1,0 +1,35 @@
+
+\subsubsection{Linux (Raspberry Pi)}
+
+\begin{console}
+cd ~
+wget https://github.com/espressif/ESP8266_NONOS_SDK/archive/v2.1.0.zip
+unzip v2.1.0.zip
+sudo apt-get install python python-pip
+sudo pip install esptool
+\end{console}
+
+%pip2 install esptool
+
+
+\begin{console}
+esptool.py version
+\end{console}
+
+\begin{screensmall}
+esptool.py v2.1
+2.1
+\end{screensmall}
+
+\begin{console}
+python esptool.py -p /dev/ttyAMA0 flash_id 
+\end{console}
+
+
+%ttyUSB0 
+\begin{console}
+cd ESP8266_NONOS_SDK-2.1.0/bin/
+sudo esptool.py -p /dev/ttyAMA0 write_flash 0x00000 boot_v1.6.bin 0x01000 at/512+512/user1.1024.new.2.bin \
+ 0xFB000 blank.bin 0xFC000 esp_init_data_default.bin 0x7E000 blank.bin 0xFE000 blank.bin 
+\end{console}
+

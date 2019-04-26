@@ -3,7 +3,6 @@ from time import sleep
 #from dhtxx import DHT22
 from dhtxx import DHT11
 
-
 #dht = DHT22(22)
 dht = DHT11(22)
 while True:
