@@ -1,7 +1,10 @@
 
-Der USB Gadget Modus der Raspberry Pi Zero ist bereits auf dem Raspjamming Image vorinstalliert. Die Vergabe der IP-Adresse erfolgt über einen DHCP-Server, sodass im Idealfall keinerlei Einstellungen am Host System vorgenommen werden müssen.
+Der USB Gadget Modus der Raspberry Pi Zero ist bereits auf dem Raspjamming Image vorinstalliert. Die Vergabe der IP-Adresse erfolgt über einen DHCP-Server, sodass im Idealfall keinerlei Einstellungen am Host System vorgenommen werden müssen.\\
+Nur das Weiterleiten des Internets auf die Netzwerkverbindung des Raspberry Pi Zero ist manuell   einzurichten.\\
+Auch wenn der Raspberry Pi über WLAN mit dem lokalen Netz verbunden ist, ist der folgende Einrichtungsvorgang identisch. Nur das weiterleiten des Internets ist dann nicht nötig.  
 
-\subsection{Host (DHCP-Client)}
+
+%\subsection{Host (DHCP-Client)}
 %\clearpage
 %\input{OTG_Kubuntu}
 %\clearpage
@@ -11,23 +14,7 @@ Der USB Gadget Modus der Raspberry Pi Zero ist bereits auf dem Raspjamming Image
 
 Alternativ können die Einstellungen auch automatisch über eine Shell-Script durchgeführt werden (siehe Kapitel \ref{sec:shellscript} \titleref{sec:shellscript}).
 
+\input{OTG_Windows10}
 
-\section{Verbindung}
-
-\subsection{SSH}
-\input{SSH}
-
-\subsection{SSH über Shell-Script} \label{sec:shellscript}
-
-Am Einfachsten ist es die Verbindung zu Raspberry Pi über das vorbereitete PiConnect.sh Shell-Script herzustellen. Es setzt automatisch die Internetweiterleitung und startet die SSH-Verbindung. Es kann vom vorbereitetet Raspbian-Image oder von Github geladen werden.
-
-\begin{console} 
-	scp pi@raspberrypi.local:/home/pi/scripts/PiConnect.sh .
-\end{console}
-oder
-\begin{console} 
-	wget --trust-server-names https://goo.gl/uwguQo
-	sh PiConnect.sh
-\end{console}   
 
 

@@ -1,0 +1,38 @@
+
+\subsection{dd Kommandozeilenprogramm}
+
+Die erhaltene Image-Datei kann mit dem Kommandozeilenprogramm dd auf eine MicroSD-Karte übertragen werden.\\
+\textbf{Es ist unbedingt vor dem Ausführen des Befehls zu prüfen, ob das angegebene Laufwerk bzw. Device auch der vorgesehenen MicroSD-Karte entspricht!}\\ 
+Bei USB-Kartenlesern bzw. USB-Adaptern ist die Ermittlung des Devices leicht über die Systemmeldungen möglich. 
+
+\begin{console}
+	dmesg | tail -n 10
+\end{console}
+
+\begin{screensmall}
+	scsi 3:0:0:0: Direct-Access     MXT-USB  Storage Device   1308 PQ: 0 ANSI: 0 CCS
+	sd 3:0:0:0: Attached scsi generic sg1 type 0
+	sd 3:0:0:0: [sdb] 15730688 512-byte logical blocks: (8.05 GB/7.50 GiB)
+	sd 3:0:0:0: [sdb] Write Protect is off
+	sd 3:0:0:0: [sdb] Mode Sense: 03 00 00 00
+	sd 3:0:0:0: [sdb] No Caching mode page found
+	sd 3:0:0:0: [sdb] Assuming drive cache: write through
+	sdb: sdb1 sdb2
+	sd 3:0:0:0: [sdb] Attached SCSI removable disk
+	EXT4-fs (sdb2): mounted filesystem with ordered data mode. Opts: (null)
+\end{screensmall}
+
+Die MicroSD-Karte wurde im Beispiel als Device "`sdb"' über einen USB-Adapter eingebunden. Nun kann man die Image-Datei mit dem Programm dd auf die MicroSD-Karte übertragen. Mit dem Parameter "`of"' muss der komplette Device-Name, in diesem Fall "`/dev/sdb"', angegeben werden. Bei Parameter "`if"' wird die entpackte Image-Datei angeben. Die Blöckgröße bzw. der Cache wird mit Parameter "`bs"' gesetzt. Eine größere Blockgröße erhöht die Schreibgeschwindigkeit. Sie wird im Beispiel mit 4~MB angegeben.\\
+Zu Beachten ist, dass der USB-Massenspeicher möglicherweise bereits automatisch gemountet wurde. Dann sollte man die Partitionen mit dem Befehl "`umount"' zuerst auswerfen. 
+
+
+\begin{console}
+	umount /dev/sdb1 /dev/sdb2
+	dd if=2019-04-26-Raspjamming-full.img of=/dev/sdc bs=4M
+\end{console}
+
+\begin{screensmall}
+	2623+0 Datensätze ein
+	2623+0 Datensätze aus
+	2387266048 Bytes (2,4 GB) kopiert, 247,6147 s, 10,4 MB/s
+\end{screensmall}

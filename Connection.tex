@@ -1,0 +1,57 @@
+%\clearpage
+\section{Verbindung}
+\subsection{Linux}
+
+%\subsection{SSH}
+\input{SSH}
+
+%\subsection{SSH über Shell-Script} \label{sec:shellscript}
+
+Am Einfachsten ist es die Verbindung zu Raspberry Pi über das vorbereitete PiConnect.sh Shell-Script herzustellen. Es setzt automatisch die Internetweiterleitung und startet die SSH-Verbindung. Es kann vom vorbereitetet Raspbian-Image oder von Github geladen werden.
+
+\begin{console} 
+	scp pi@raspberrypi.local:/home/pi/scripts/PiConnect.sh .
+\end{console}
+oder
+\begin{console} 
+	wget --trust-server-names https://goo.gl/uwguQo
+	sh PiConnect.sh
+\end{console}   
+
+
+\subsection{Windows}
+
+\subsection{Xming (X-Server) }
+
+Setup: \urlsmall{http://www.straightrunning.com/XmingNotes/}\\
+
+Xming ist ein Programm um einen X-Server unter Windows zur Verfügung zu stellen. Xming kann mit PuTTY zusammen genutzt werden, um grafische Linux Programme am Windows PC anzeigen und verwenden zu können. Die Programme laufen dabei auf dem entfernen System, lediglich die Interaktion und grafische Anzeige werden über den SSH-Tunnel von Putty über Xming dargestellt.\\
+Bei der Auswahl der Komponenten beim Installer sollte man "`Full installtion"' wählen. Weiterer Einstellungen bedarf es nicht.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.38]{images/Xming_Components.png}
+	%	\caption{}
+	\label{Putty}
+\end{figure}
+
+
+\subsection{PuTTY (SSH-Client) }
+
+Setup: \urlsmall{https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html}\\
+
+Der aktuelle PuTTY Installer kann von der Projektseite heruntergeladen und das Programm installiert werden. Danach kann die Verbindung eingerichtet werden.\\
+%Zuerst muss bei Terminal/Keyboard "`The Function keys and keypad"' auf Linux gesetzt werden. Dann sollte unter Terminal/Bell die akustische Warnfunktion (Action to happen when a bell occurs) abgeschaltet werden, indem man in den Einstellungen "`None (bell disabled)"' auswählt. Die Zeichenkodierung muss unter Window/Translation auf UTF-8 gesetzt werden. 
+Bei Connection/SSH/X11 muss "`Enable X11 forwarding"' eingeschaltet werden. Dann können auch grafische Programme gestartet werden, wenn ein X-Server am lokalen System verfügbar ist.\\
+Unter Session können dann die Verbindungsdaten eingerichtet werden. Am sichersten ist die Eingabe der IP-Adresse, wenn diese bekannt ist. Möglicherweise ist die Raspberry Pi auch unter dem Hostnamen raspberrypi.local erreichbar. Beim "`connection type"' gibt man SSH mit Port 22 an.\\
+Bei "`Saved Sessions"' kann ein beliebiger Name wie z.~B. "`192.168.137.10 - Raspberry Pi"' eingetragen werden. Mit der Taste "`Save"' werden nun alle Einstellungen unter diesem Namen gespeichert. Mit der Taste "`Load"' können die Einstellungen wieder geladen werden. Nach dem Drücken der Taste "`Open"' wird die Verbindung aufgebaut und man muss Benutzername und Passwort eingeben.\\
+Username: pi\\
+Passwort: raspberry\\
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.295]{images/Putty-Session-Raspjamming.png}
+	\includegraphics[scale=0.49]{images/Putty-X11.png}
+	%	\caption{}
+	\label{Putty}
+\end{figure}

@@ -43,7 +43,6 @@ Wechselt man zu einem anderen Raspberry Pi mit den gleichen Namen, so kann es pa
 %ssh-keygen -f "/home/evil/.ssh/known_hosts" -R raspberrypi.local
 %ECDSA host key for raspberrypi.local has changed and you have requested strict checking.
 
-
 In diesem Fall muss man die Verbindung aus den bekannten Hosts löschen. Hierfür muss folgendes Kommando ausgeführt werden:
 
 \begin{console} 
@@ -51,4 +50,3 @@ In diesem Fall muss man die Verbindung aus den bekannten Hosts löschen. Hierfür 
 \end{console}
 
 Optional kann auch der Parameter \texttt{-o UserKnownHostsFile=/dev/null} beim ssh-Befehl hinzugefügt werden. Dann erfolgt keine Überprüfung der Verbindung. 
-
