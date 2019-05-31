@@ -2,13 +2,13 @@
 
 \tableofcontents
 
-\chapter{Installation Raspberry Pi}
+\chapter{Installation}
 
-\section{Raspbian / Raspjamming}
+\section{Raspjamming (Raspbian) - Raspberry Pi}
 
 \input{RaspbianInstall}
 
-\section{USB Gadget / OTG Modus Raspberry Pi Zero}
+\section{USB Gadget / OTG Modus - Raspberry Pi Zero}
 
 \input{OTG}
 
@@ -41,34 +41,28 @@
 \section{Ampel} \label{sec:Projekt_Ampel}
 \input{TrafficLight}
 
-\clearpage
-\section{7-Segement Display}
-
-\input{TM1637Display}
-
 %\clearpage
-\section{Temperatur-/Feuchtesensor DHT22/AM2303}
-
+\section{Temperatur-/Feuchtesensor DHT11/DHT22/AM2303}
 \input{DHT22}
 
-%\clearpage
-\section{Distanzsensor HC-SR04}
+\clearpage
+\section{7-Segement Display}
+\input{TM1637Display}
 
+\clearpage
+\section{Distanzsensor HC-SR04}
 \input{HC-SR04}
 
 \clearpage
 \section{ESP8266}
-
 \input{ESP8266}
 
 \clearpage
 \section{Atmega328}
-
 \input{Atmega328}
 
 
 \chapter*{Anhang}
-
 
 \subsection*{GPIO's Raspberry Pi Zero}
 
@@ -90,36 +84,35 @@
   %\label{GPIORaspberryPi}
 \end{figure}
 
-Am GC2-xHAT sind alle beschriebene Projekte bereits entsprechend der Anleitung angeschlossen. Weitere Informationen zur Hardware erhält man auf \url{https://github.com/GrazerComputerClub/GC2-xHAT}.\\ 
-Folgende Befehl sind am Raspjamming Linux verfügbar wenn der GC2xHAT aufgesteckt wurde.\\ 
- 
-\textbf{poweron} \dots ESP8266 und ATmega328 Sockel werden mit 3.3 V versorgt\\
-\textbf{poweroff} \dots ESP8266 und ATmega328 Sockel werden nicht mehr versorgt\\
-\textbf{beep} \dots Ein kurzer Ton wird am Summer erzeugt\\
-\textbf{redon} \dots Rote LED wird eingeschaltet\\
-\textbf{redglow} \dots Rote LED wird schwach leuchtend eingeschaltet\\
-\textbf{redoff} \dots Rote LED wird ausgeschaltet\\
-\textbf{orangeon} \dots Orange LED wird schwach leuchtend eingeschaltet\\
-\textbf{orangeglow} \dots Orange LED wird schwach leuchtend eingeschaltet\\
-\textbf{orangeoff} \dots Orange LED wird ausgeschaltet\\
-\textbf{greenon} \dots Grüne LED wird ausgeschaltet\\
-\textbf{greenglow} \dots Grüne LED wird schwach leuchtend eingeschaltet\\
-\textbf{greenoff} \dots Grüne LED wird ausgeschaltet\\
-\textbf{ledon} \dots Alle LEDs werden eingeschaltet\\
-\textbf{ledoff} \dots Alle LEDs werden ausgeschaltet\\
+Am GC2-xHAT sind alle beschriebene Projekte bereits entsprechend der Anleitung angeschlossen. Weitere Informationen erhält man auf \url{https://github.com/GrazerComputerClub/GC2-xHAT}.\\
+Alle hardwarespezifischen Befehle sind auf \urlsmall{https://github.com/GrazerComputerClub/GC2-xHAT/blob/master/aliases/bash_aliases_GC2xHAT} aufgelistet, folgende Befehle sind eine Auswahl:\\
 
-
+\textbf{beep/piep} \dots Ein kurzer Ton wird am Summer erzeugt\\
+\textbf{redon/rotan} \dots Rote LED wird eingeschaltet\\
+\textbf{redglow/rotglimmen} \dots Rote LED wird schwach leuchtend eingeschaltet\\
+\textbf{redoff/rotaus} \dots Rote LED wird ausgeschaltet\\
+\textbf{orangeon/orangeein} \dots Orange LED wird schwach leuchtend eingeschaltet\\
+\textbf{orangeglow/orangeglimmen} \dots Orange LED wird schwach leuchtend eingeschaltet\\
+\textbf{orangeoff/orangeaus} \dots Orange LED wird ausgeschaltet\\
+\textbf{greenon/grünan} \dots Grüne LED wird ausgeschaltet\\
+\textbf{greenglow/grünglimmen} \dots Grüne LED wird schwach leuchtend eingeschaltet\\
+\textbf{greenoff/grünaus} \dots Grüne LED wird ausgeschaltet\\
+\textbf{ledon/ledan} \dots Alle LEDs werden eingeschaltet\\
+\textbf{ledoff/ledaus} \dots Alle LEDs werden ausgeschaltet\\
+\textbf{atpoweron/engeriean} \dots ESP8266/ATmega328 werden mit 3.3 V versorgt\\
+\textbf{atpoweroff/engerieaus} \dots ESP8266/ATmega328 werden nicht mehr versorgt\\
+\textbf{esppoweron} \dots ESP8266/ATmega328 werden mit 3.3 V versorgt, serial Terminal gestoppt\\
+\textbf{esppoweroff} \dots ESP8266/ATmega328 werden nicht mehr versorgt, serial Terminal gestartet\\
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[scale=0.60]{images/GC2-xHAT-circuit_diagram.png}
+  \includegraphics[scale=0.55]{images/GC2-xHAT-circuit_diagram.png}
   %\caption{}
-  %\label{GPIORaspberryPi}
+  %\label{GC2xHAT-CircuitDiagram}
 \end{figure}
 
 
 \clearpage
-
 
 \input{CC_Lizenz}
 

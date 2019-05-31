@@ -1,5 +1,3 @@
-\subsection{Anschluss}
-
 
 \begin{figure}[ht]
   \centering
@@ -80,14 +78,14 @@ sudo screen /dev/ttyAMA0 115200
 %sudo screen /dev/ttyUSB0 115200
 %\end{console}
 
-\textbf{Beispielkommunikation:}
+%\textbf{Beispielkommunikation:}
 
-Verbindungstest: \texttt{AT} \framebox{Enter} \framebox{Strg}+\framebox{J} 
+\textbf{Verbindungstest:} \texttt{AT} \framebox{Enter} \framebox{Strg}+\framebox{J} 
 \begin{screensmall}
 OK
 \end{screensmall}
 
-Reset: \texttt{AT+RST} \framebox{Enter} \framebox{Strg}+\framebox{J}
+\textbf{Reset:} \texttt{AT+RST} \framebox{Enter} \framebox{Strg}+\framebox{J}
 \begin{screensmall}
 2nd boot version : 1.7(5d6f877)
 SPI Speed : 40MHz
@@ -141,7 +139,7 @@ jump to run user1 @ 1000
 % jump to run user1 @ 1000
 
 
-Version abfragen: \texttt{AT+GMR} \framebox{Enter} \framebox{Strg}+\framebox{J}
+\textbf{Version abfragen:} \texttt{AT+GMR} \framebox{Enter} \framebox{Strg}+\framebox{J}
 \begin{screensmall}
 AT version:1.6.2.0(Apr 13 2018 11:10:59)
 SDK version:2.2.1(6ab97e9)
@@ -164,24 +162,24 @@ OK
 %Jun 13 2016 11:29:20
 
 
-WLAN Modus Station setzen: \texttt{AT+CWMODE=1} \framebox{Enter} \framebox{Strg}+\framebox{J}
+\textbf{WLAN Modus Station setzen:} \texttt{AT+CWMODE=1} \framebox{Enter} \framebox{Strg}+\framebox{J}
 \begin{screensmall}
 OK
 \end{screensmall}
 
-Gefundene WLAN-Netze auflisten: \texttt{AT+CWLAP} \framebox{Enter} \framebox{Strg}+\framebox{J}
+\textbf{Gefundene WLAN-Netze auflisten:} \texttt{AT+CWLAP} \framebox{Enter} \framebox{Strg}+\framebox{J}
 \begin{screensmall}
 +CWLAP:(4,"Home",-92,"f4:06:8d:3b:e1:3c",11,-41)
 +CWLAP:(3,"AndroidAP",-89,"10:a5:d0:73:de:eb",11,23)
 \end{screensmall}
 
 
-LED schalten (ESP-01S): \\
+\textbf{LED schalten (nur bei ESP-01S):} \\
 \texttt{AT+SYSIOSETCFG=2,0,1} \framebox{Enter} \framebox{Strg}+\framebox{J}\\
 \texttt{AT+SYSGPIODIR=2,1} \framebox{Enter} \framebox{Strg}+\framebox{J}\\
 \texttt{AT+SYSGPIOWRITE=2,1} \framebox{Enter} \framebox{Strg}+\framebox{J}\\
 \texttt{AT+SYSGPIOWRITE=2,0} \framebox{Enter} \framebox{Strg}+\framebox{J}\\
 \texttt{AT+SYSGPIODIR=2,0} \framebox{Enter} \framebox{Strg}+\framebox{J}\\
 
-Screen beenden:\\
+\textbf{Screen beenden:}\\
 \framebox{Strg}+\framebox{A} und  "`:quit"' eingeben

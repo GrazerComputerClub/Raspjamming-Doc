@@ -5,7 +5,7 @@ Nach der Einrichtung kann per SSH-Client eine Verbindungen zum Raspberry Pi herg
 	ssh -X pi@raspberrypi.local
 \end{console}
 
-Um grafische Programme am Host anzeigen zu können, muss der Parameter \texttt{-X} angegeben werden. Dann wird eine X-Server Verbindung via SSH hergestellt. Verbindet man sich zum ersten Mal mit dem Raspberry Pi, so wird noch eine Sicherheitswarnung ausgegeben. Der kryptographische Schlüssel für die Verbindung ist dem System noch nicht bekannt.%  und muss bestätigt werden.
+Um grafische Programme am Host anzeigen zu können, muss der Parameter \texttt{-X} angegeben werden. "`\textbf{pi}"' ist der Standardbenutzer am System. Dann wird eine X-Server Verbindung via SSH hergestellt. Verbindet man sich zum ersten Mal mit dem Raspberry Pi, so wird noch eine Sicherheitswarnung ausgegeben. Der kryptographische Schlüssel für die Verbindung ist dem lokalen System noch nicht bekannt.%  und muss bestätigt werden.
 \begin{screensmall}
 The authenticity of host 'raspberrypi.local (192.168.137.10)' can't be established.
 ECDSA key fingerprint is SHA256:Dcf3HYgE2GHnNnZ8Xhv8iJ9yA+zvfXBC9COm2eL9i0w.
@@ -13,9 +13,9 @@ Are you sure you want to continue connecting (yes/no)?
 Warning: Permanently added 'raspberrypi.local,192.168.137.10' (ECDSA) to the list of known hosts.
 \end{screensmall}
 
-Die Frage muss mit \texttt{yes} bestätigt werden. Anschließend muss das Default-Passwort von Raspbian \textbf{\texttt{raspberry}} eingegeben werden. Nun sollte man den Raspberry Pi Prompt \texttt{pi@rasbperrypi:\textasciitilde  \$} sehen. 
+Die Frage muss mit \texttt{yes} bestätigt werden. Anschließend muss das Default-Passwort von Raspbian "`\textbf{raspberry}"' eingegeben werden. Nun sollte man den Raspberry Pi Prompt \texttt{pi@rasbperrypi:\textasciitilde  \$} sehen. 
 
-Wechselt man zu einem anderen Raspberry Pi mit den gleichen Namen, so kann es passieren, dass eine Fehlermeldung ausgegeben wird, weil sich der kryptographische Schlüssel geändert hat.
+Wechselt man zu einem anderen Raspberry Pi mit den gleichen Namen oder installiert das System nochmals, so kann es passieren, dass eine Fehlermeldung ausgegeben wird, weil sich der kryptographische Schlüssel geändert hat.
 
 \begin{screensmall} 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

@@ -1,13 +1,7 @@
 
-Raspbian ist das offizielle Betriebssystem für den Raspberry~Pi. Für die Verwendung bei einem Raspberry Pi Jam wurde ein eigenes Image vom Grazer Computer Club (GC2) mit dem Namen Raspjamming erstellt und zur Verfügung gestellt. Ausgehend vom 
-Raspbian Lite Image wurde noch verschiedene Entwickerlerprogramm und Werkzeuge installiert. Zusätzlich wurde das System so eingerichtet, dass die Raspberry Pi Zero direkt über den USB-OTG Anschluss mit dem Host PC verbunden werden kann. Der SSH-Dienst und WLAN wurde aktiviert. Alle Ländereinstellung wurden  von UK auf Österreich/German geändert. Ein Web-Server stellt Programme und Hilfe zur Verfügung, auch ohne Internet..\\  
-Für die Installation benötigt man ein beliebiges Linux System mit einem MicroSD-Kartenlesegerät.  Es wird mindestens eine 4~GB große MicroSD-Karte benötigt. Die aktuelle Raspjamming Version kann als Image-Datei von der Seite \url{https://github.com/GrazerComputerClub/Raspjamming-Image} heruntergeladen werden. 
-
-\begin{console}
-	wget --trust-server-names http://strohmayers.com/image/2019-04-26-Raspjamming-full.img.7z
-	7z e 2019-04-26-Raspjamming-full.img.7z
-	rm 2019-04-26-Raspjamming-full.img.7z
-\end{console}
+Raspbian ist das offizielle Betriebssystem für den Raspberry~Pi. Für die Verwendung bei einem Raspberry Pi Jam wurde ein eigenes Image vom Grazer Computer Club (GC2) mit dem Namen Raspjamming erstellt. Ausgehend vom 
+Raspbian Lite Image wurde noch verschiedene Entwickerlerprogramme und Werkzeuge installiert. Zusätzlich wurde das System so eingerichtet, dass der Raspberry Pi Zero direkt über den USB-OTG Anschluss mit dem Host-PC verbunden werden kann. Der SSH-Dienst und WLAN wurde aktiviert. Alle Ländereinstellung wurden von UK auf Österreich/German geändert. Ein Web-Server stellt Programme und Hilfe zur Verfügung. Somit ist ein Betrieb auch ohne Internetverbindung möglich. Ein Download-Link zum aktuellen Raspjamming-Image wird auf der GitHub Projekt-Seite \urlsmall{https://github.com/GrazerComputerClub/Raspjamming-Image} zur Verfügung gestellt.\\  
+Für die Installation benötigt man eine mindestens 4~GB große MicroSD-Karte und einen Computer mit MicroSD-Kartenlesegerät (z. B. USB-Adapter oder Karten-Slot mit Adapter).
 
 \input{Install_Linux_Etcher}
 %\input{Install_Linux_dd}
@@ -15,14 +9,13 @@ Für die Installation benötigt man ein beliebiges Linux System mit einem MicroSD-
 
 \subsection{Windows - Rufus}
 
-Zuerst muss man die erhaltene Datei "`2019-04-26-Raspjamming-full.img.7z"' entpacken. Dazu kann das Programm 7-Zip verwendet werden (Download auf \url{http://www.7-zip.de/download.html}). Die Image-Datei "`2019-04-26-Raspjamming-full.img"' kann mit dem Programm "`Rufus"' (Download auf \url{https://rufus.akeo.ie/}) auf eine MicroSD-Karte übertragen werden. Dazu klickt man auf "`AUSWAHL"' und wählt dann die IMG-Datei aus. Unter Laufwerk wählt man das Laufwerk aus, in dem sich die zu schreibende MicroSD-Karte befindet. Achtung: Daten von dem Laufwerk werden überschrieben! Nach dem Drücken von "`Start"' beginnt der Schreibvorgang.
+Nach dem Download, muss man die erhaltene Datei "`2019-04-26-Raspjamming-full.img.7z"' entpacken. Dazu kann das Programm 7-Zip verwendet werden (Download auf \url{http://www.7-zip.de/download.html}). Die Image-Datei kann mit dem Programm "`Rufus"' (Download auf \url{https://rufus.akeo.ie/}) auf eine MicroSD-Karte übertragen werden. Dazu klickt man auf "`AUSWAHL"' und wählt dann die Datei "`2019-04-26-Raspjamming-full.img"' aus. Unter Laufwerk wählt man das Laufwerk aus, in dem sich die zu schreibende MicroSD-Karte befindet. Achtung: Daten von dem Laufwerk werden überschrieben! Nach dem Drücken von "`Start"' beginnt der Schreibvorgang.
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[scale=0.5]{images/Rufus_Raspjamming.png}
 	\label{Rufus}
 \end{figure}
-
 
 Nun kann die MicroSD-Karte in den Raspberry Pi gesteckt und an die Versorgung angeschlossen werden.
 

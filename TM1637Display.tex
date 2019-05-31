@@ -1,6 +1,4 @@
 
-%\textbf{Anschluss:} 
-
 \begin{figure}[ht]
   \centering
   \includegraphics[scale=0.25]{images/TM1637_Steckplatine.png}	
@@ -18,12 +16,12 @@
 \ExerciseBox{
 Gib Zahlen und Texte aus [Beispiele]\\
 Gib die aktuelle CPU Temperatur aus [Beispiel Python]\\
+Gib die aktuelle Temperatur vom DHT-Sensor aus [Beispiel Blockly-gPIo]\\
 Gib die gemittelte aktuelle CPU Last in Prozent aus\\
 Realisiere eine Laufschrift}
 
-%https://www.mpja.com/download/31227sc.pdf
 
-\textbf{C:} 
+\subsubsection{C}
 
 \begin{console}
 	cd ~/Projekte
@@ -34,7 +32,8 @@ Realisiere eine Laufschrift}
 	geany project.geany & 
 \end{console}
 
-\textbf{C\#:}
+
+\subsubsection{C\#}
 
 \begin{console}
 	cd ~/Projekte
@@ -45,8 +44,10 @@ Realisiere eine Laufschrift}
 	sudo mono wiringpi.net.sensors.sample.exe 3
 \end{console}
 
+
 \clearpage
-\textbf{Python:}
+\subsubsection{Python}
+
 \begin{console}
 	sudo pip3 install wiringpi
 	git clone https://github.com/depklyon/raspberrypi-python-tm1637.git
@@ -64,8 +65,8 @@ Realisiere eine Laufschrift}
 	python3 TM1637_Temp.py
 \end{console}
 
-\subsection{Blockly-gPIo}
 
+\subsubsection{Blockly-gPIo}
 
 \begin{figure}[ht]
 	\centering
@@ -73,4 +74,3 @@ Realisiere eine Laufschrift}
 	%	\caption{}
 	\label{Blockly-gPIo_TM1637}
 \end{figure}
-
