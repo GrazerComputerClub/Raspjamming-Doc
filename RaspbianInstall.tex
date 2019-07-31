@@ -2,13 +2,39 @@
 Raspbian ist das offizielle Betriebssystem für den Raspberry~Pi. Für die Verwendung bei einem Raspberry Pi Jam wurde die Distribution \texttt{Raspjamming} vom Grazer Computer Club (GC2) erstellt. Ausgehend vom Raspbian Lite Image wurde noch verschiedene Entwickerlerprogramme und Werkzeuge installiert. Zusätzlich wurde das System so eingerichtet, dass der Raspberry Pi Zero direkt über den USB-OTG Anschluss mit dem Host-PC verbunden werden kann. Der SSH-Dienst und WLAN wurde aktiviert. Alle Ländereinstellung wurden von UK auf Österreich/German geändert. Ein Web-Server stellt Programme und Hilfe zur Verfügung. Somit ist ein Betrieb auch ohne Internetverbindung möglich. Ein Download-Link zum aktuellen Raspjamming-Image wird auf der GitHub Projekt-Seite \urlsmall{https://github.com/GrazerComputerClub/Raspjamming-Image} zur Verfügung gestellt.\\  
 Für die Installation benötigt man eine mindestens 4~GB große MicroSD-Karte und einen Computer mit MicroSD-Kartenlesegerät (USB-Adapter oder Karten-Slot mit Adapter).
 
-\input{Install_Linux_Etcher}
-%\input{Install_Linux_dd}
+
+\subsection{Linux - Etcher}
+
+Nach dem Download von \urlsmall{https://github.com/GrazerComputerClub/Raspjamming-Image/releases} liegt das Image als komprimierte ZIP-Datei vor.\\ 
+Das grafische Programm Etcher (Download auf \url{https://www.balena.io/etcher/}) kann direkt zum Übertragen der komprimierten Image-Datei verwendet werden. 
+
+\begin{console}
+	wget https://github.com/balena-io/etcher/releases/download/v1.5.43/\
+	balena-etcher-electron-1.5.43-linux-x64.zip
+	unzip balena-etcher-electron-1.5.43-linux-x64.zip
+	sudo mv balenaEtcher-1.5.43-x64.AppImage /usr/local/bin/etcher
+	etcher &
+\end{console}
+
+
+%Nach dem Starten wird danach gefragt ob eine Verknüpfung zum Programm erstellt werden soll. Dies sollte man mit "`Yes"' beantworten.\\ 
+Mit der Schaltfläche "`Select image"' kann man die Zip-Datei "`20\_\_-\_\_-\_\_-Raspjamming-full.img.zip"' auswählen. Ist nur ein mögliches Ziel vorhanden, wird es bereits vorausgewählt, z.~B. die MicroSD-Karte im Karten-Slot (/dev/memcblk0) oder im USB-Adapter (/dev/sdb). Sind mehrere mögliche Ziele vorhanden, wird die "`Select drive"' Schaltfläche freigeschaltet. Dann kann ein Laufwerk manuell ausgewählt werden.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.3]{images/Etcher.png}
+	\includegraphics[scale=0.3]{images/Etcher_2.png}
+	\label{Etcher}
+\end{figure}
+
+
+Wenn man noch etwas ändern will, kann die entsprechende "`Change"' Schaltfläche ausgewählt werden. Zum Schluss wird der Schreibvorgang mit der "`Flash!"' Schaltfläche gestartet. Möglicherweise wird vom Programm allerdings noch das System-Passwort abgefragt.\\ 
+Das Laufwerk bzw. die Partitionen werden nun aus dem System ausgehängt und der Schreibvorgang gestartet. Der Fortschritt, die durchschnittliche Übertragungsrate und die Restlaufzeit werden während des Vorgangs angezeigt.
 
 
 \subsection{Windows - Rufus}
 
-Nach dem Download, muss man die erhaltene Datei "`2019-04-26-Raspjamming-full.img.7z"' entpacken. Dazu kann das Programm 7-Zip verwendet werden (Download auf \url{http://www.7-zip.de/download.html}). Die Image-Datei kann mit dem Programm "`Rufus"' (Download auf \url{https://rufus.akeo.ie/}) auf eine MicroSD-Karte übertragen werden. Dazu klickt man auf "`AUSWAHL"' und wählt dann die Datei "`2019-04-26-Raspjamming-full.img"' aus. Unter Laufwerk wählt man das Laufwerk aus, in dem sich die zu schreibende MicroSD-Karte befindet. Achtung: Daten von dem Laufwerk werden überschrieben! Nach dem Drücken von "`Start"' beginnt der Schreibvorgang.
+Nach dem Download von \urlsmall{https://github.com/GrazerComputerClub/Raspjamming-Image/releases} liegt das Image als komprimierte ZIP-Datei vor. Es kann mit dem Programm "`Rufus"' (Download auf \url{https://rufus.akeo.ie/}) direkt auf eine MicroSD-Karte übertragen werden. Dazu klickt man auf "`AUSWAHL"' und wählt dann die Zip-Datei "`20\_\_-\_\_-\_\_-Raspjamming-full.img.zip"' aus. Unter Laufwerk wählt man das Laufwerk aus, in dem sich die zu schreibende MicroSD-Karte befindet. Achtung: Die Daten von dem Laufwerk werden überschrieben! Nach dem Drücken von "`Start"' beginnt der Schreibvorgang.
 
 \begin{figure}[ht]
 	\centering

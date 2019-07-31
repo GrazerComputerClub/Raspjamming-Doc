@@ -61,13 +61,14 @@ Beim schwarzen ESP-01 (1~MBit) müssen folgende Dateien und Adressen übertragen w
   \label{ESP8266_AT-Cmd}
 \end{figure}
 
-
+Vor dem Verbindungsaufbau muss zuerst der serielle Terminal beendet werden. Bei GC2-xHAT kann dies mit dem Befehl "`esppoweron"' erledigt werden. Dieser schaltet danach die Versorgung des ESP-Moduls ein. Dann kann über das Programm screen mit dem Mikrocontroller kommuniziert werden. Alle Befehle müssen allerdings mit Enter und STRG+J abgeschlossen werden. 
 %\textbf{Raspberry Pi:}
 \begin{console}
 sudo systemctl stop serial-getty@ttyAMA0.service
 sudo systemctl status serial-getty@ttyAMA0.service
-sudo apt-get install screen
 \end{console}
+%sudo apt-get install screen
+
 
 \begin{console}
 sudo screen /dev/ttyAMA0 115200
@@ -182,4 +183,4 @@ OK
 \texttt{AT+SYSGPIODIR=2,0} \framebox{Enter} \framebox{Strg}+\framebox{J}\\
 
 \textbf{Screen beenden:}\\
-\framebox{Strg}+\framebox{A} und  "`:quit"' eingeben
+\framebox{Strg}+\framebox{A} und "`:quit"' eingeben

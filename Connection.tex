@@ -11,14 +11,15 @@
 
 %\subsubsection{Über Shell-Script} \label{sec:shellscript}
 
-Am Einfachsten ist es die Verbindung zu Raspberry Pi über das vorbereitete PiConnect.sh Shell-Script herzustellen. Es setzt automatisch die Internetweiterleitung und startet die SSH-Verbindung. Es kann vom vorbereitetet Raspbian-Image oder von Github geladen werden.
+Am Einfachsten ist es die Verbindung zu Raspberry Pi über das vorbereitete PiConnect.sh Shell-Script herzustellen. Es setzt automatisch die Internetweiterleitung und startet die SSH-Verbindung. Es kann vom vorbereiteten Raspjamming-Image über SecureCopy oder den Web-Server \url{http://raspberrypi.local/scripts/} heruntergeladen werden.
+Alternativ kann es auch direkt von Github geladen werden.
 
 \begin{console} 
 	scp pi@raspberrypi.local:/home/pi/scripts/PiConnect.sh .
 \end{console}
 oder
 \begin{console} 
-	wget --trust-server-names https://goo.gl/uwguQo
+	wget --trust-server-names https://git.io/fj9Tm
 	sh PiConnect.sh
 \end{console}   
 

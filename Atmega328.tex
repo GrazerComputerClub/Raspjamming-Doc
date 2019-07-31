@@ -9,6 +9,8 @@
 
 \subsection{Einrichtung}
 
+Bei Raspjamming-Image wurde die Einrichtung bereits vorgenommen. Die folgenden Schritte sind also nur nötig wenn die Installation auf einem anderen System erfolgt.
+
 \begin{console}
 sudo apt-get install avrdude
 \end{console}
@@ -23,7 +25,9 @@ In der Konfigurationsdatei /etc/avrdude.conf muss die SPI-Taktfrequenz von 400~k
   baudrate=200000;
 \end{screensmall}
 
-Danach kann mit "`avrdude"' der Chiptyp ausgelesen bzw. die Kommunikation geprüft werden.
+\subsection{Verbindungstest}
+
+Mit "`avrdude"' kann der Chiptyp ausgelesen bzw. die Kommunikation geprüft werden. Bei GC2-xHAT muss allerdings der Befehl "`atpoweron"' zuerst ausgeführt werden.
 \begin{console}
 sudo avrdude -c linuxspi -p m328p -P /dev/spidev0.0
 \end{console}
