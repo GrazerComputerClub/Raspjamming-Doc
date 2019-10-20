@@ -2,31 +2,27 @@
 \textbf{
 USB-Sticks unbekannter Herkunft können potentiell gefährliche Daten beinhalten oder sich als Hacker Tool erweisen. Malware, Ransomware, Macroviren und andere Schafsoftware kann sich darauf befinden und verbreitet werden. Eine veränderte Firmware kann als Einfallstor, Trojaner oder Keylogger genutzt werden. So einen USB-Stick sorglos in den eigenen PC oder Laptop zu stecken wäre nicht ratsam.\\}
 
-
 \textbf{Beispiele:}\\
-\utl{https://usbkill.com} - USB-Killer Gerät\\ 
-\url{shorturl.at/ajxBU} - BadUSB\\
-\url{shorturl.at/bhN45} - SyncCrypt: Neue Ransomware lauert in JPG-Dateien\\
-\url{shorturl.at/acgQ0} - Analysiert: Alte Masche, neue Verpackung - Infektion durch PDFs\\
+\url{https://usbkill.com} - USB-Killer Gerät\\ 
+\url{https://bit.ly/32x1O8T} - BadUSB\\
+\url{https://bit.ly/32wCz6A} - SyncCrypt: Neue Ransomware lauert in JPG-Dateien\\
+\url{https://bit.ly/2qFalTz} - Analysiert: Alte Masche, neue Verpackung - Infektion durch PDFs\\
 
-
-CIRCLean USB-Sanitizer ist eine freie Hardwarelösung zum Überprüfen von Dokumenten auf einem nicht vertrauenswürdigen USB-Stick. Das Gerät kopiert automatisch Dateien und speichert es auf einem eigenen vertrauenswürdigen USB-Stick.
+CIRCLean USB-Sanitizer ist eine freie Hardwarelösung zum Überprüfen von Dokumenten auf einem nicht vertrauenswürdigen USB-Stick. Das Gerät kopiert automatisch Dateien und speichert sie auf einem eigenen vertrauenswürdigen USB-Stick.
 %Das Gerät konvertiert automatisch Dateien in ein lesbares, aber sicheres Format und speichert es auf einem eigenen vertrauenswürdigen USB-Stick. 
-Der Fokus vom USB-Sanitizer liegt auf dem %Dokumentenaustausch 
+Der Fokus vom USB-Sanitizer liegt auf der %Dokumentenaustausch 
 Dokumentenprüfung, auch wenn die verwendete Transportschicht (der USB-Stick) nicht vertrauenswürdig ist oder ein Verdacht besteht. Im schlimmsten Fall wäre nur das USB-Sanitizer Gerät gefährdet, nicht jedoch der eigene Computer, der die Daten liest.\\
-Das System wurde speziell für den Einsatz mit einer Raspberry Pi Hardware vorbereitet. Weitere Informationen kann der Projektseite \url{https://www.circl.lu/projects/CIRCLean/} entnommen werden.
-Dokumentation, Source Code und das offizielle Image wird auch auf der Git-Hub Seite \url{https://github.com/CIRCL} zur Verfügung gestellt.
+Das System wurde speziell für den Einsatz mit einer Raspberry Pi Hardware vorbereitet. Weitere Informationen kann der Projektseite \url{https://www.circl.lu/projects/CIRCLean/} entnommen werden. Dokumentation, Source Code und das offizielle Image wird auch auf der GitHub Seite \url{https://github.com/CIRCL} zur Verfügung gestellt.
 
 \subsection{GC2-Image CIRCLean USB-Sanitizer}
 
-Der Grazer Computer Club hat über einen eigen Fork Erweiterungen zum Projekt hinzugefügt und ein eigenes Image erstellt. Über die Git-Hub Seite \url{https://github.com/GrazerComputerClub/Circlean} wird alles zur Verfügung gestellt.\\
+Der Grazer Computer Club hat über einen GitHub Fork Erweiterungen zum Projekt hinzugefügt und ein eigenes Image erstellt. Über die GitHub Seite \url{https://github.com/GrazerComputerClub/Circlean} wird alles zur Verfügung gestellt.\\
 Beim dem GC2-Image werden alle bisherigen Raspberry Pi Typen und Varianten unterstützt. Bei den Raspberry Pi Zero und den A Varianten muss ein USB-Hub bzw. USB-Hub-HAT eingesetzt werden, da Quell- und Ziel-USB-Stick gleichzeitig angeschlossen sein müssen.\\
-CIRCLean USB-Sanitizer ist eine freie Software, die von Dritten geprüft und analysiert wird. Das GC2-Image hat zum original Projekt noch Optimierungen, Features in Bereich Visualisierung sowie Kompatibilität hinzugefügt. An der generellen Funktionalität wurden keine Änderungen durchgeführt.
-Das GC2-Image bzw. das Raspbian Betriebssystem darauf wurde nicht extra gegen Beeinflussung oder mögliche Schwachstellen geschützt, es ist eher als Entwicklungs- und Versuchsversion zu sehen.\\
-Als visuelle Rückmeldung werden 3 LEDs an unterschiedlichen Positionen genutzt. Die rote LED leuchtet wenn der nicht vertrauenswürdigen USB-Stick, also die Quelle eingesteckt wurde. Die grüne LED leuchtet wenn der vertrauenswürdigen USB-Stick, also das Ziel eingesteckt wurde. Die mittlere orange LED leuchtet wenn der Synchronisierungsvorgang gestartet wurde. Sie blinkt dabei wenn eine Übertragung am USB-Bus stattfindet.\\
-Es wurden zwei mögliche Positionen für die LEDs vorgesehen. Eine Position ist kompatibel mit der PIStop Ampel (Bezug: \url{shorturl.at/lETX3}) die direkt auf die GPIO-Leiste gesteckt wird. Diese Position bei GPIO25, GPIO8 und GPIO7 ist kompatibel mit allen Raspberry P Versionen.\\
-Die zweite mögliche Position ist für die Ampel die beim Raspberry Pi Jam eingesetzt wird (China Produkt). Bei dieser Ampel ist die rote und die grüne LED vertauscht. Sie kann nur auf Raspberry Pi Varianten mit 40-Pin Header Anschluss bei GPIO16, GPIO20 und GPIO21 genutzt werden. Diese Belegung ist auch kompatibel mit der GC2-xHAT Aufsteckboard. Auch hier sind die entsprechende Ampel LEDs vorhanden.\\
-Zusätzlich gibt es noch zwei Tasten für das Herunterfahren der Raspberry Pi und Starten der Synchronisierung. Hier wurde wieder eine Position für die alten Raspberry Pi Varianten und eine kompatible für den GC2-xHAT vorgesehenen. Die linke Taste am GC2-xHAT startete die Synchronisierung die rechte fährt das System herunter. Optimaler ist allerdings die Nutzung des GPIO3 da damit auch ein neuerlicher Start ausgelöst werden kann, wenn die Raspberry Pi heruntergefahren wurde. 
+CIRCLean USB-Sanitizer ist eine freie Software, die von Dritten geprüft und analysiert wird. Das GC2-Image hat zum original Projekt noch Optimierungen, Features in Bereich Visualisierung sowie Kompatibilität hinzugefügt. An der generellen Funktionalität wurden keine Änderungen durchgeführt. Das GC2-Image bzw. das Raspbian Betriebssystem darauf wurde nicht extra gegen Beeinflussung oder mögliche Schwachstellen geschützt, es ist eher als Entwicklungs- und Versuchsversion zu sehen.\\
+Als visuelle Rückmeldung werden 3 LEDs an unterschiedlichen Positionen genutzt. Die rote LED leuchtet, wenn der nicht vertrauenswürdigen USB-Stick, also die Quelle eingesteckt wurde. Die grüne LED leuchtet wenn der vertrauenswürdigen USB-Stick, also das Ziel, eingesteckt wurde. Die mittlere orange LED leuchtet, wenn der Synchronisierungsvorgang gestartet wurde. Sie blinkt dabei, wenn eine Übertragung am USB-Bus stattfindet.\\
+Es wurden zwei mögliche Positionen für die LEDs vorgesehen. Eine Position ist kompatibel mit der PiStop Ampel (Bezug PIMORONI: \url{https://bit.ly/2VVJ1Sd}) die direkt auf die GPIO-Leiste gesteckt wird. Diese Position bei GPIO25, GPIO8 und GPIO7 ist kompatibel mit allen Raspberry P Versionen.\\
+Die zweite mögliche Position ist für die Ampel die beim Raspberry Pi Jam eingesetzt wird (China Produkt). Bei dieser Ampel ist die rote und die grüne LED vertauscht. Sie kann nur auf Raspberry Pi Varianten mit 40-Pin Header Anschluss bei GPIO16, GPIO20 und GPIO21 genutzt werden. Diese Belegung ist auch kompatibel mit dem GC2-xHAT Aufsteckboard. Auch hier sind die entsprechende Ampel-LEDs vorhanden.\\
+Zusätzlich gibt es noch zwei Tasten für das Herunterfahren der Raspberry Pi und Starten der Synchronisierung. Hier wurde wieder eine Position für die alten Raspberry Pi Varianten und eine kompatible für den GC2-xHAT vorgesehenen. Die linke Taste am GC2-xHAT startete die Synchronisierung die rechte fährt das System herunter. Besser ist allerdings die Nutzung des GPIO3 da damit auch ein neuerlicher Start ausgelöst werden kann, wenn die Raspberry Pi heruntergefahren wurde. 
 
 \begin{figure}[ht]
 	\centering
@@ -70,15 +66,15 @@ Zusätzlich gibt es noch zwei Tasten für das Herunterfahren der Raspberry Pi und 
 \clearpage
 \subsection{Installation}
 
-Nach dem Download der neuesten Release Version von \url{https://github.com/GrazerComputerClub/Circlean/releases} liegt das Image "`image\_20\_\_-\_\_-\_\_-CIRCLean-USB-Sanitizer-full.zip"' als komprimierte ZIP-Datei vor und kann direkt auf eine SD-Karte übertragen werden. Hierzu wird eine mindesten 4 GB große SD bzw. MicroSD-Karte benötigt.\\
+Nach dem Download der neuesten Release-Version von \url{https://github.com/GrazerComputerClub/Circlean/releases} liegt das Image "`image\_20\_\_-\_\_-\_\_-CIRCLean-USB-Sanitizer-full.zip"' als komprimierte ZIP-Datei vor und kann direkt auf eine SD-Karte übertragen werden. Hierzu wird eine mindesten 4 GB große SD- bzw. MicroSD-Karte benötigt.\\
 Unter Linux kann dazu das grafische Programm Etcher (Download auf \url{hattps://www.balena.io/etcher/}) verwendet werden. Unter Windows kann mit dem Programm "`Rufus"' (Download auf \url{https://rufus.akeo.ie/}) die Übertragung durchgeführt werden. Näheres zur Bedienung der Software kann im Kapitel "`Installation Raspjamming (Raspbian)"' entnommen werden.\\
-Danach kann die SD-Karte in den Raspberry Pi gesteckt.
+Danach kann die SD-Karte in den Raspberry Pi gesteckt werden.
 
 
 \subsection{Funktionsweise}
 
-Man steckt den nicht vertrauenswürdigen USB-Stick links oben in die USB-Buchse. Dann steckt man den vertrauenswürdigen USB-Stick auf eine weitere USB-Buchse. danach wird die Versorgung (Micro USB Power) angeschlossen. Damit fährt das System hoch und der Synchronisierungsvorgang startet ohne Interaktion. Während des Synchronisierungsvorgangs wird Musik abgespielt, sofern Kopfhörer oder Lautsprecher angeschlossen wurden. Danach stoppt die Musik  und das System fährt wieder automatisch herunter. Die USB-Stick können entfernt werden.\\
-Beim GC2-Image kann auch zur Laufzeit der Vorgang gestartet werden. Wird das System ohne USB-Sticks gestartet so verbleibt es im aktiven Zustand. Beim Einstecken der USB-Sticks wird die entsprechende LED eingeschaltet. Die Synchronisierung starten dann mit dem Tastendruck. Nach dem  Synchronisierungsvorgangs erlischt die orange LED und die Musik hört zu spielen auf. Dann können die USB-Sticks entfernt werden. Das Herunterfahren des Systems wird über einen eigene Taste gestartet.\\
+Man steckt den nicht vertrauenswürdigen USB-Stick links oben in die USB-Buchse. Dann steckt man den vertrauenswürdigen USB-Stick auf eine weitere USB-Buchse. danach wird die Versorgung (Micro USB Power) angeschlossen. Damit fährt das System hoch und der Synchronisierungsvorgang startet ohne Interaktion. Während des Synchronisierungsvorgangs wird Musik abgespielt, sofern Kopfhörer oder Lautsprecher angeschlossen wurden. Danach stoppt die Musik und das System fährt wieder automatisch herunter. Die USB-Sticks können entfernt werden.\\
+Beim GC2-Image kann auch zur Laufzeit der Vorgang gestartet werden. Wird das System ohne USB-Sticks gestartet, so verbleibt es im aktiven Zustand. Beim Einstecken der USB-Sticks wird die entsprechende LED eingeschaltet. Die Synchronisierung starten dann nach betätigen der Sync-Taste. Nach dem Synchronisierungsvorgangs erlischt die orange LED und die Musik hört zu spielen auf. Dann können die USB-Sticks entfernt werden. Das Herunterfahren des Systems wird über eine eigene Shutdown-Taste gestartet.\\
 
 
 \begin{figure}[ht]
@@ -100,8 +96,9 @@ Auf dem Quell USB-Stick wurde die Datei autorun.inf umbenannt. Sie ist potentiel
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[scale=0.21]{images/USB-Sanitizer_Src.png}	
-	\includegraphics[scale=0.21]{images/USB-Sanitizer_Des.png}	
+	\includegraphics[scale=0.26]{images/USB-Sanitizer_Src.png}	
+	\includegraphics[scale=0.26]{images/USB-Sanitizer_Des.png}	
 	%	\caption{}
-	\label{LED_Steckplatine}
+	\label{USB_Sanitizer_Folder}
 \end{figure}
+
