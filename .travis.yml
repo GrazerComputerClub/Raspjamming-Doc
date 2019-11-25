@@ -6,7 +6,7 @@ script:
 deploy:
   provider: releases
   api_key:
-    secure: VceCbD2oEDfVvUBHvOie+dqrLLKSoBUoxa8tehzeGxWjk5+frFiyRiON8cx9T//b7cp9Gy8yWSWycYEk2o6R0+7h7Ga70dG8oFJMwtyCHrGk7wTl5Qa7wrI1XLcuewz6bchA/l36TPArborwOoz7p2Op/5eJvzQxXGkHrwwc2lxmZZtQoAJvLx+Pfci38udVPxIEHAStz87OsIbqyIHdbVdKTiqB4agkKxUYlPIOHEBtyykOL1aoT2W6wFwf4Gn4B7DTn0hVGbQv5AohyyNYTjz273WIi/d1mvxc67SBZyyJR8Q6XFyBWDSBItMqZaGDVRUSg9mXDEd33uCgJc9+yPBi1UpucTjoOTfBzc/2rkkI3wyolxFQJWzPow9MhPolBXswjDQFuhT7bkU515ivMuHiUX45w7ylxSjx+7xcIXakvmcYsFuODX+NQYUROkvyQ29T5g23AI2b3K+h/s1rd5LFnHz92YOePtRjJDnwxzHCpA1vB5qtWLr7rXsrcBAmG2ISb/krLlyM+yMYWZiKA4HQDGwfQGQ/Q58drl7nu5fbmGkISQbX30lX0R3P06MTaIQ7cn1T+2VHf5YXCyxCelNC1ryQcUVvwk6HLXMdJUwMkT5b7hXSsyfIpQZG+zkDz3Un6Dd/LoKJFmUW44qOSXEWp8LWyuryAja3RPbvzj0=
+    secure: $SEC_API_KEY
   file: Raspjamming.pdf
   skip_cleanup: true
   on:
